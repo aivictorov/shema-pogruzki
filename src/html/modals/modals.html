@@ -1,0 +1,64 @@
+<div class="modals">
+    <!-- callback -->
+    <div class="modal" modal-window="callback">
+        <div class="modal__content modal__content--center">
+            {% include './../forms/callback-form.html' %}
+        </div>
+        <div class="modal__close-button">
+            <svg class="icon icon--close-light">
+                <use xlink:href="./img/icons/sprite.svg#close-light"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- //callback -->
+
+    <!-- oversize -->
+    <div class="modal" modal-window="oversize">
+        <div class="modal__content modal__content--right">
+
+
+
+            <div class="policy-check__form">
+                {% include './../forms/oversize-form.html' %}
+            </div>
+
+            
+        </div>
+        <div class="modal__close-button">
+            <svg class="icon icon--close">
+                <use xlink:href="./img/icons/sprite.svg#close"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- //oversize -->
+
+    <!-- gallery -->
+    <div class="modal" modal-window="gallery">
+        <div class="modal__content modal__content--center modal__content--gallery page-text">
+            <img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="modal__close-button">
+            <svg class="icon icon--close-light">
+                <use xlink:href="./img/icons/sprite.svg#close-light"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- //gallery -->
+
+    <!-- service-details -->
+    <div class="modal" modal-window="service-details">
+        <div class="modal__content modal__content--center modal__content--service-details page-text">
+            <h3>Разработка схем НТУ</h3>
+            <p style="text-align: left; margin-bottom: 20px;">
+                Схема НТУ разрабатывается в случае, если способ размещения и крепления груза не предусмотрен действующими сетевыми или местными техническими условиями. Схемы погрузки НТУ предназначены для осуществления разовых либо нерегулярных перевозок грузов. Срок действия НТУ 5 лет.
+            </p>
+            <button class="btn btn--red">Заказать</button>
+        </div>
+        <div class="modal__close-button">
+            <svg class="icon icon--close-light">
+                <use xlink:href="./img/icons/sprite.svg#close-light"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- //service-details -->
+</div>

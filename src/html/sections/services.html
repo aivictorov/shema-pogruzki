@@ -1,0 +1,28 @@
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="h2">Наши услуги</h2>
+        </div>
+        <div class="services__row">
+            {% set services = [
+                {
+                    "title": "Разработка эскизов размещения и крепления грузов",
+                    "img": "01.png"
+                }, {
+                    "title": "Разработка схем размещения и крепления грузов способами, не предусмотренными техническими условиями (НТУ)",
+                    "img": "02.png"
+                }, {
+                    "title": "Разработка местных технических условий (МТУ)",
+                    "img": "03.png"
+                }, {
+                    "title": "Разработка схем размещения и крепления негабаритных грузов",
+                    "img": "04.png"
+                }
+            ] %}
+
+            {% for service in services %}
+                {% include './../cards/service-card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

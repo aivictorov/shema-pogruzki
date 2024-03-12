@@ -1,0 +1,42 @@
+.about-card-wrapper {
+	padding: 5px;
+	width: 50%;
+}
+
+.about-card {
+	display: flex;
+	align-items: center;
+	padding: 34px 31px 30px 76px;
+	height: 100%;
+	min-height: 160px;
+	border: 1px solid #DDE4E7;
+}
+
+.about-card__info {
+	display: flex;
+	align-items: flex-end;
+
+	h6 {
+		padding-bottom: 3px;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 21px;
+	}
+}
+
+.about-card__data {
+	color: #C20D19;
+	padding: 0 54px 0 0;
+
+	h2 {
+		line-height: 1.1;
+		white-space: nowrap;
+	}
+}
+
+.about-card__legend {
+	margin-bottom: 8px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.33;
+}

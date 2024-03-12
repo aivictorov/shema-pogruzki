@@ -1,0 +1,47 @@
+<header class="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top__row">
+                <div class="header-top__item">
+                    Работаем по всем железным дорогам РФ и СНГ
+                </div>
+                <div class="header-top__item">
+                    <a class="link link--icon header-top__phone" href="tel:+79219512991">
+                        <span class="link__icon">
+                            <svg class="icon icon--phone">
+                                <use xlink:href="./img/icons/sprite.svg#phone"></use>
+                            </svg>
+                        </span>
+                        <span class="link__text">+7 921 951 29 91</span>
+                    </a>
+                </div>
+                <div class="header-top__item">
+                    <a class="link link--icon header-top__phone" href="mailto:zhdservice@yandex.ru">
+                        <span class="link__icon">
+                            <svg class="icon icon--mail">
+                                <use xlink:href="./img/icons/sprite.svg#share-mail"></use>
+                            </svg>
+                        </span>
+                        <span class="link__text">shema-pogruzki@yandex.ru</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom__row">
+                <div class="header-bottom__item">
+                    {% include './../blocks/logo.html' %}
+                </div>
+                <div class="header-bottom__item">
+                    {% include './../blocks/menu.html' %}
+                </div>
+                <div class="header-bottom__item">
+                    <button class="btn btn--yellow" type="button" modal-button="oversize">Расчет негабаритности</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

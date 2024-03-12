@@ -1,0 +1,20 @@
+a.link {
+    display: inline-block;
+    cursor: pointer;
+
+    &--icon {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &--arrow {
+        font-size: 15px;
+        line-height: 1.2;
+        color: #C20D19;
+        font-weight: 700;
+
+        .link__icon {
+            margin-left: 13px;
+        }
+    }
+}

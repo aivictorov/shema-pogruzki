@@ -1,0 +1,22 @@
+[
+    { 
+        "name": "О компании",
+        "link": "#main-about"
+    },
+    { 
+        "name": "Услуги",
+        "link": "#main-services"
+    },
+    { 
+        "name": "Портфолио",
+        "link": "#main-portfolio"
+    },
+    { 
+        "name": "Статьи",
+        "link": "#main-articles"
+    },
+    { 
+        "name": "Документы",
+        "link": "#main-docs"
+    }
+]

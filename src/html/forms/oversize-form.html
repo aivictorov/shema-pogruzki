@@ -1,0 +1,30 @@
+<form class="form" method="post">
+    <div class="form__title">
+        <h3 class="h3">Расчет индекса негабаритности</h3>
+    </div>
+    <div class="form__text">
+        <div class="form__instruction">
+            Пожалуйста, введите номер полиса и нажмите «Проверить»
+        </div>
+        <div class="form__notice">
+            Please enter policy number and press «Check»
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <input id="coord-Y" class="input input--large" type="number" placeholder="Высота от УГР" min="480"
+                max="5300" required>
+        </div>
+        <div class="form__item">
+            <input id="coord-X" class="input input--large" type="number" placeholder="Полуширина" minlength="0"
+                max="3000" required>
+        </div>
+        <div class="form__item">
+            <button id="addPoint" class="btn btn--yellow" type="button">Добавить точку</button>
+        </div>
+    </div>
+    <div class="form__item form__item--buttons">
+        <button id="count" class="btn btn--yellow" type="submit">Проверить</button>
+    </div>
+    <div id="result">5464</div>
+</form>

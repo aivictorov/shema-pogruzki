@@ -1,0 +1,17 @@
+<div class="doc-card-wrapper">
+    <a href={{ item.link }} class="doc-card" download>
+        <span class="doc-card__icon">
+            <svg class="icon icon--doc">
+                <use xlink:href="./img/icons/sprite.svg#doc"></use>
+            </svg>
+        </span>
+        <span class="doc-card__text">
+            <span class="doc-card__name">
+                {{ item.title }}
+            </span>
+            <span class="doc-card__format">
+                PDF {{ item.size }} мб.
+            </span>
+        </span>
+    </a>
+</div>

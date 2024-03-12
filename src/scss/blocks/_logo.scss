@@ -1,0 +1,10 @@
+a.logo {
+    display: block;
+    overflow: hidden;
+
+    img {
+        height: 50px;
+        width: 100%;
+        object-fit: contain;
+    }
+}

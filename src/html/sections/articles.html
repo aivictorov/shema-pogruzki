@@ -1,0 +1,25 @@
+<section id="articles" class="articles">
+    <div class="container">
+        <div class="section-title ">
+            <h2 class="h2">Статьи</h2>
+        </div>
+        <div class="articles__row">
+            {% set articles = [
+                {
+                    title: "Погрузка контейнеров. В каких случаях требуется эскиз или НТУ?",
+                    link: "/article.html"
+                }, {
+                    title: "Погрузка контейнеров. В каких случаях требуется НТУ?",
+                    link: "/article.html"
+                }, {
+                    title: "Погрузка контейнеров. В каких случаях требуется эскиз?",
+                    link: "/article.html"
+                }
+            ] %}
+
+            {% for item in articles %}
+                {% include './../cards/article-card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

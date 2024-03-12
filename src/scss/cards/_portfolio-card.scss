@@ -1,0 +1,39 @@
+.portfolio-card-wrapper {
+	padding: 10px;
+	width: 50%;
+}
+
+.portfolio-card {
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio-card__imgL {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #E2E8EB;
+}
+
+.portfolio-card__img-row {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 10px;
+}
+
+.portfolio-card__imgS {
+	width: 110px;
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+.portfolio-card__text {
+	margin-top: 5px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #899398;
+	display: block;
+	text-align: center;
+}

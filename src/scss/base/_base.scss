@@ -1,0 +1,52 @@
+html {
+	min-height: 100vh;
+	/* sticky footer */
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/* sticky footer */
+
+	font-family: $baseFont;
+	color: $black;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.67;
+
+	// text-rendering: optimizeSpeed;
+	// text-rendering: optimizeLegibility;
+	// -webkit-font-smoothing: antialiased;
+	// -ms-text-size-adjust: 100%;
+	// -moz-text-size-adjust: 100%;
+	// -webkit-text-size-adjust: 100%;
+
+	&.no-scroll {
+		overflow-y: hidden;
+		padding-right: 17px;
+	}
+}
+
+body>* {
+	flex-shrink: 0;
+	/* sticky footer */
+}
+
+/* Grid styles */
+
+.container {
+	max-width: 1300px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 25px;
+	position: relative;
+}
+
+.img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

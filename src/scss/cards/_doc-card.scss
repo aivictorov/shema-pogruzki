@@ -1,0 +1,44 @@
+.doc-card-wrapper {
+	padding: 5px;
+	width: 25%;
+}
+
+.doc-card {
+	display: flex;
+	padding: 22px 22px;
+	height: 100%;
+	border: 1px solid #E2E8EB;
+	background: #fff;
+}
+
+.doc-card__icon {
+	width: 24px;
+	min-width: 24px;
+	margin-right: 22px;
+	display: block;
+
+	.icon--doc {
+		width: 24px;
+		height: 26px;
+	}
+}
+
+.doc-card__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.doc-card__name {
+	margin-bottom: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.08;
+	color: #C20D19;
+}
+
+.doc-card__format {
+	font-size: 11px;
+	line-height: 1;
+	color: #899398;
+}

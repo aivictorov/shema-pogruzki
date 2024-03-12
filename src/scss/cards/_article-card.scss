@@ -1,0 +1,46 @@
+.article-card-wrapper {
+	width: 360px;
+
+	&:not(:last-child) {
+		margin-right: 85px;
+	}
+}
+
+.article-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.article-card__img {
+	display: block;
+	width: 360px;
+	height: 202px;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.article-card__title {
+	display: block;
+	margin-bottom: 12px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.33;
+	color: #222222;
+}
+
+.article-card__text {
+	display: block;
+	margin-bottom: 18px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: #899398;
+}
+
+.article-card__date {
+	display: block;
+	font-size: 12px;
+	line-height: 1.2;
+	color: #222222;
+}
