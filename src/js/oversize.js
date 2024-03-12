@@ -139,25 +139,25 @@ function check(y, array) {
 
 function render(pointsObj, field) {
     field.innerHTML = `
-    <div class="oversize-results__row" >
-        <div class="oversize-results__item">Y</div>
-        <div class="oversize-results__item">X</div>
-        <div class="oversize-results__item">Зона</div>
-        <div class="oversize-results__item">Степень</div>
+    <div class="oversize-points__row" >
+        <div class="oversize-points__item"><b>Y</b></div>
+        <div class="oversize-points__item"><b>X</b></div>
+        <div class="oversize-points__item"><b>Зона</b></div>
+        <div class="oversize-points__item"><b>Степень</b></div>
     </div>`
 
     pointsObj.forEach((point) => {
         field.insertAdjacentHTML("beforeend", `
-            <div class="oversize-results__row">
-                <div class="oversize-results__item">${point['Y']}</div>
-                <div class="oversize-results__item">${point['X']}</div>
-                <div class="oversize-results__item">${point['zone']}</div>
-                <div class="oversize-results__item">${point['index']}</div>
+            <div class="oversize-points__row">
+                <div class="oversize-points__item">${point['Y']}</div>
+                <div class="oversize-points__item">${point['X']}</div>
+                <div class="oversize-points__item">${point['zone']}</div>
+                <div class="oversize-points__item">${point['index']}</div>
             </div>
         `);
     });
 };
 
 function renderIndex(indexArray, field) {
-    field.innerText = 'Н' + indexArray[0] + indexArray[1] + indexArray[2] + '0';
+    field.innerText = 'Индекс негабаритности: Н' + indexArray[0] + indexArray[1] + indexArray[2] + '0';
 };

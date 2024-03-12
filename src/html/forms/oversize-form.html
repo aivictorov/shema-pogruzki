@@ -2,46 +2,55 @@
     <div class="form__title">
         <h3 class="h3">Расчет индекса негабаритности</h3>
     </div>
-    <div class="form__text">
-        <div class="form__instruction">
-            Пожалуйста, введите контрольные точки и нажмите «Проверить»
-        </div>
-        <div class="form__notice">
-            Высоту необходимо указывать от УГР с учетом уровня пола вагона и высоты подкладок.
-        </div>
+    <div class="form__instruction">
+        Пожалуйста, введите координаты контрольных точек груза. В левом поле необходимо указать высоту точки от УГР (с учетом высоты уровня пола вагона и подкладок), в правом - расстояние от оси пути до соответствующей точки (полуширину) в мм. 
     </div>
-    <div class="form__row">
-        <div class="form__item">
-            <input id="coord-Y" class="input input--large" type="number" placeholder="Высота от УГР" min="480"
+    <div class="form__fieldset">
+        <div class="form__row">
+            <div class="form__item">
+                <input id="coord-Y" class="input input--large" type="number" placeholder="Высота от УГР" min="480"
                 max="5300" required>
-        </div>
-        <div class="form__item">
-            <input id="coord-X" class="input input--large" type="number" placeholder="Полуширина" min="1"
+            </div>
+            <div class="form__item">
+                <input id="coord-X" class="input input--large" type="number" placeholder="Полуширина" min="1"
                 max="3000" required>
+            </div>
         </div>
-        <div class="form__item">
-            <button id="addBtn" class="btn btn--yellow btn--border" type="button">Добавить точку</button>
+        <div class="form__row">
+            <div class="form__item">
+                <button id="addBtn" class="btn btn--yellow" type="button">Добавить точку</button>
+            </div>
         </div>
-    </div>
-    <div class="form__item form__item--buttons">
-        <button id="count" class="btn btn--yellow" type="submit">Проверить</button>
-    </div>
-    <div  class="oversize-results__title"></div>
-
-    <h6>Контрольные точки:</h6>
-    <div class="oversize-results" id="points">
-        <div class="oversize-results__row" >
-            <div class="oversize-results__item">Y</div>
-            <div class="oversize-results__item">X</div>
-            <div class="oversize-results__item">Зона</div>
-            <div class="oversize-results__item">Степень</div>
+        <div class="form__row">
+            <div class="form__item">
+                <button id="reset" class="btn btn--yellow btn--border" type="submit">Очистить форму</button>
+            </div>
         </div>
     </div>
-
-    <h6>Индекс неагабаритности:</h6>
-    <div class="oversize-index" id="result">H0000</div>
-
-    <div class="form__item form__item--buttons">
-        <button id="reset" class="btn btn--yellow btn--border" type="button">Очистить форму</button>
+    <div class="form__fieldset">
+        <div class="form__subtitle">
+            <h6 class="h6">Контрольные точки</h6>
+        </div>
+        <div class="oversize-points" id="points">
+            <div class="oversize-points__row" >
+                <div class="oversize-points__item">
+                    <b>Y</b>
+                </div>
+                <div class="oversize-points__item">
+                    <b>X</b>
+                </div>
+                <div class="oversize-points__item">
+                    <b>Зона</b>
+                </div>
+                <div class="oversize-points__item">
+                    <b>Степень</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form__fieldset">
+        <div class="form__subtitle">
+            <h6 class="h6" id="result">Индекс негабаритности: H0000</h6>
+        </div>
     </div>
 </form>

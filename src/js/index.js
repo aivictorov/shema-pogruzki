@@ -1,13 +1,49 @@
 import { oversizeForm } from './oversize.js';
 
 window.addEventListener('DOMContentLoaded', () => {
+	// gallery();
 	modalWindows();
 	scrollup();
 	details();
-	selects();
+	// selects();
 	oversizeForm();
 	callbackForm();
 });
+
+function gallery() {
+	const modals = document.querySelector('.modals')
+	const portfolio = document.querySelector('.portfolio__row')
+
+	portfolio.querySelectorAll('img').forEach((img) => {
+
+		let string = img.src
+		string = string.split('/')[string.split('/').length - 1].split('.')[0].split('img-')[1];
+
+		console.log(string)
+		img.src = img.src.replace("small", "big");
+		console.log(img.src)
+
+		modals.insertAdjacentHTML("afterbegin", `
+		<div class="modal" modal-window="gallery">
+			<div class="modal__content modal__content--center modal__content--gallery page-text">
+				<img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
+			</div>
+			<div class="modal__close-button">
+				<svg class="icon icon--close-light">
+					<use xlink:href="./img/icons/sprite.svg#close-light"></use>
+				</svg>
+			</div>
+		</div>
+	`)
+
+	})
+
+	// http://localhost:8000/img/portfolio/img-small.jpg
+
+
+
+
+}
 
 function details() {
 	document.querySelectorAll('[details-button]').forEach((button) => {
@@ -30,7 +66,7 @@ function scrollup() {
 	scrollup.addEventListener('click', () => {
 		window.scrollTo(0, 0);
 	});
-}
+} 
 
 function modalWindows() {
 	document.querySelectorAll('[modal-button]').forEach((button) => {

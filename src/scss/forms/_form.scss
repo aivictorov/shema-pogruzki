@@ -1,35 +1,53 @@
 .form {
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
 }
 
-// .form__title {}
+.form__title {
+    margin-bottom: 30px;
+}
 
-// .form__text {}
+.form__text {
+    text-align: left;
+}
 
 .form__instruction {
-    font-size: 18px;
-    line-height: 1;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.33;
+    text-align: left;
+}
+
+.form__fieldset {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.form__row {
+    display: flex;
+    margin: 0 -5px 10px;
+}
+
+.form__item {
+    padding: 0 5px;
+    flex: 1;
+}
+
+.form__subtitle {
+    &+* {
+        margin-top: 25px;
+    }
+}
+
+.form__buttons {
+    margin-top: 25px;
 }
 
 .form__notice {
     font-weight: 700;
     font-size: 15px;
     line-height: 2;
-}
-
-.form__row {
-    display: flex;
-    margin: 0 -6px;
-}
-
-.form__item {
-    padding: 0 6px;
-    flex: 1;
-}
-
-.form__buttons {
-    margin-top: 25px;
 }
