@@ -1,20 +1,25 @@
+import { oversizeForm } from './oversize.js';
+
 window.addEventListener('DOMContentLoaded', () => {
 	modalWindows();
 	scrollup();
+	details();
+	selects();
 	oversizeForm();
-	details()
-	// selects();
+	callbackForm();
 });
 
-document.querySelectorAll('[details-button]').forEach((button) => {
-	const details = document.querySelector(`[details-content="${button.getAttribute('details-button')}"]`);
+function details() {
+	document.querySelectorAll('[details-button]').forEach((button) => {
+		const details = document.querySelector(`[details-content="${button.getAttribute('details-button')}"]`);
 
-	if (details) {
-		button.addEventListener('click', () => {
-			details.classList.toggle('none');
-		});
-	};
-});
+		if (details) {
+			button.addEventListener('click', () => {
+				details.classList.toggle('none');
+			});
+		};
+	});
+};
 
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');
@@ -119,85 +124,47 @@ function selects() {
 	});
 };
 
-function oversizeForm() {
-	const addBtn = document.querySelector('#addBtn');
-	const countBtn = document.querySelector('#count');
-	const pointsField = document.querySelector('#points');
-	const resultField = document.querySelector('#result');
-	const points = [];
-
-	const loadingSize = [
-		[480, 1625],
-		[4000, 1625],
-		[4500, 1238],
-		[5000, 853],
-		[5300, 620],
-	]
-
-	addBtn.addEventListener('click', (event) => {
+function callbackForm() {
+	document.querySelector('#form').addEventListener('submit', (event) => {
 		event.preventDefault();
-		pointsField.innerHTML = "";
-		const coordY = parseInt(document.querySelector('#coord-Y').value);
-		const coordX = parseInt(document.querySelector('#coord-X').value);
-		points.push([coordY, coordX]);
-		points.forEach((point) => {
-			pointsField.innerHTML = pointsField.innerHTML + "Y = " + point[0] + ", X = " + point[1] + "<br>"
-		})
 	});
 
-	countBtn.addEventListener('click', (event) => {
-		event.preventDefault();
-		resultField.innerHTML = "";
-		points.forEach((point) => {
-
-			let interpolation = false
-
-			let index = loadingSize.findIndex((loadingSizePoint) => {
-				if (point[0] === loadingSizePoint[0]) {
-					return true
-				} else if (point[0] < loadingSizePoint[0]) {
-					interpolation = true
-					return true
-				}
-
-			});
-
-			if (!interpolation) result = loadingSize[index][1]
-
-			if (interpolation) {
-				result = Math.round(loadingSize[index - 1][1] + (point[0] - loadingSize[index - 1][0]) * (loadingSize[index][1] - loadingSize[index - 1][1]) / (loadingSize[index][0] - loadingSize[index - 1][0]))
+	$('#form').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			message: {
+				required: true
 			}
-
-			resultField.innerHTML = resultField.innerHTML + `<div>X = ${result}</div>`
-		})
-
-
-
-
-		// let hmin, hmax
-
-		// for (const key in Object.keys(loadingSize)) {
-		// 	if (parseInt(Object.keys(loadingSize)[parseInt(key)]) < coordY && parseInt(Object.keys(loadingSize)[parseInt(key) + 1]) > coordY) {
-		// 		hmin = parseInt(Object.keys(loadingSize)[parseInt(key)]);
-		// 		hmax = parseInt(Object.keys(loadingSize)[parseInt(key) + 1]);
-		// 		console.log(coordY, hmin, hmax)
-		// 	}
-		// }
-
-		// let wmin = parseInt(loadingSize[hmin][0])
-		// let wmax = parseInt(loadingSize[hmax][0])
-
-		// if (wmin === wmax) {
-		// 	result = wmin
-		// } else {
-		// 	result = wmin + (hmax - hmin) / (wmax - wmin) * (coordY - hmin)
-		// }
-
-		// if (coordX <= result) {
-		// 	resText = 'Груз габаритный' + ' ' + coordX + ' ' + coordY + ' ' + result
-		// } else {
-		// 	resText = 'Груз негабаритный' + ' ' + coordX + ' ' + coordY + ' ' + result
-		// }
-
+		},
+		messages: {
+			email: {
+				required: 'Введите email',
+				email: 'Неверный формат email'
+			},
+			message: {
+				required: 'Введите текст сообщения',
+			}
+		},
+		submitHandler: function (form) {
+			ajaxFormSubmit();
+		}
 	});
-};
+
+	function ajaxFormSubmit() {
+		const string = $('#form').serialize();
+
+		$.ajax({
+			type: "POST",
+			url: "./php/mail.php",
+			data: string,
+			success: function (html) {
+				$('#form').slideUp(800);
+				$('#answer').html(html);
+			}
+		});
+		return false;
+	};
+}

@@ -1,0 +1,21 @@
+.oversize-results {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.oversize-results__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.oversize-results__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 50px;
+    background-color: lightgray;
+}

@@ -37,9 +37,10 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		bottom: 0;
+		// bottom: 0;
 		padding: 40px 45px;
 		max-width: 600px;
+		min-height: 100%;
 	}
 
 	&--gallery {

@@ -4,10 +4,10 @@
     </div>
     <div class="form__text">
         <div class="form__instruction">
-            Пожалуйста, введите номер полиса и нажмите «Проверить»
+            Пожалуйста, введите контрольные точки и нажмите «Проверить»
         </div>
         <div class="form__notice">
-            Please enter policy number and press «Check»
+            Высоту необходимо указывать от УГР с учетом уровня пола вагона и высоты подкладок.
         </div>
     </div>
     <div class="form__row">
@@ -16,7 +16,7 @@
                 max="5300" required>
         </div>
         <div class="form__item">
-            <input id="coord-X" class="input input--large" type="number" placeholder="Полуширина" minlength="0"
+            <input id="coord-X" class="input input--large" type="number" placeholder="Полуширина" min="1"
                 max="3000" required>
         </div>
         <div class="form__item">
@@ -26,9 +26,22 @@
     <div class="form__item form__item--buttons">
         <button id="count" class="btn btn--yellow" type="submit">Проверить</button>
     </div>
-    <div>Контрольные точки:</div>
-    <div id="points"></div>
+    <div  class="oversize-results__title"></div>
 
-        <div>Результат:</div>
-    <div id="result"></div>
+    <h6>Контрольные точки:</h6>
+    <div class="oversize-results" id="points">
+        <div class="oversize-results__row" >
+            <div class="oversize-results__item">Y</div>
+            <div class="oversize-results__item">X</div>
+            <div class="oversize-results__item">Зона</div>
+            <div class="oversize-results__item">Степень</div>
+        </div>
+    </div>
+
+    <h6>Индекс неагабаритности:</h6>
+    <div class="oversize-index" id="result">H0000</div>
+
+    <div class="form__item form__item--buttons">
+        <button id="reset" class="btn btn--yellow btn--border" type="button">Очистить форму</button>
+    </div>
 </form>

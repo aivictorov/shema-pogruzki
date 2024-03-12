@@ -1,4 +1,4 @@
-<form class="form">
+{# <form class="form">
     <div class="form__title">
         <h3 class="h3">Заполните форму</h3>
     </div>
@@ -15,4 +15,21 @@
     <div class="form__notice">
         Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности
     </div>
-</form>
+</form> #}
+
+<div class="section-contacts__form">
+    <form class="form" id="form">
+        <div class="form__item">
+            <span class="form__label">Ваш Email</span>
+            <input id="email" name="email" class="form__input" type="email" required>
+        </div>
+        <div class="form__item">
+            <span class="form__label">Сообщение</span>
+            <textarea id="message" name="message" class="form__input" required></textarea>
+        </div>
+        <div class="form__item">
+            <button type="submit" class="button button--accent">Отправить</button>
+        </div>
+    </form>
+    <div id="answer"></div>
+</div>
