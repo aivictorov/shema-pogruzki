@@ -1,39 +1,22 @@
-{# <form class="form">
+<!-- <form class="form" id="form">
     <div class="form__title">
         <h3 class="h3">Заполните форму</h3>
     </div>
-    <div class="form__subtitle">Мы свяжемся с вами в ближайшее время</div>
-    <div class="form__row">
-        <input type="text" class="input" placeholder="Ваше имя">
-    </div>
-    <div class="form__row">
-        <input type="text" class="input" placeholder="Ваш телефон">
-    </div>
-    <div class="form__buttons">
-        <button class="btn btn--red" type="button">Оставить заявку</button>
-    </div>
-    <div class="form__notice">
-        Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности
-    </div>
-</form> #}
-
-<form class="form" id="form">
-    <div class="form__title">
-        <h3 class="h3">Заполните форму</h3>
-    </div>
-    <div class="form__instruction">
+    <div class="form__instruction form__instruction--center">
         Мы свяжемся с вами в ближайшее время.
     </div>
     <div class="form__row">
         <div class="form__item">
-            <span class="form__label">Ваш Email</span>
-            <input id="email" name="email" class="input" type="email" required>
+            <label class="input-label" for="email">Ваш Email</label>
+            <input id="email" class="input" name="email" type="email" >
+            <span class="input-notify">Ошибка</span>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <span class="form__label">Сообщение</span>
-            <textarea id="message" name="message" class="input" required></textarea>
+            <label class="input-label" for="message">Ваш Email</label>
+            <textarea id="message" class="input" name="message" ></textarea>
+            <span class="input-notify"></span>
         </div>
     </div>
     <div class="form__row">
@@ -41,8 +24,87 @@
             <button type="submit" class="btn btn--red">Отправить</button>
         </div>
     </div>
-    <div id="answer"></div>
+
     <div class="form__notice">
+        Нажимая на кнопку "Отправить", вы соглашаетесь с политикой конфиденциальности.
+    </div>
+</form> -->
+
+<form class="modal-form" id="form" enctype='multipart/form-data'>
+    <div class="modal-form__title">Заполните форму</div>
+    <!-- <div class="modal-form__subtitle">Мы свяжемся с вами в ближайшее время</div> -->
+    <input type="text" class="modal-form__input" placeholder="Ваше имя" name="name">
+    <input type="text" class="modal-form__input" placeholder="Ваш телефон" name="phone">
+    <div class="form__row">
+        <div class="input-file">
+            <label class="input-file__label">
+                <input class="input-file__hidden visually-hidden" name="file" type="file" multiple>
+                <div class="input-file__custom"></div>
+                <div class="input-file__text">Прикрепить файл</div>
+            </label>
+        </div>
+    </div>
+    <button class="btn btn--red" type="submit">Заказать</button>
+    <div class="modal-form__notice">
         Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности
     </div>
+    <!-- <div style="text-align: left;">Выберите необходимую услугу:</div>
+    <div class="modal-form__checkbox">
+        <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__hidden">
+            <div class="custom-checkbox__checkmark"></div>
+            <span class="custom-checkbox__label">Эскиз размещения и крепления груза</span>
+        </label>
+    </div>
+    <div class="modal-form__checkbox">
+        <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__hidden">
+            <div class="custom-checkbox__checkmark"></div>
+            <span class="custom-checkbox__label">Непредусмотренные технические условия (НТУ)</span>
+        </label>
+    </div>
+    <div class="modal-form__checkbox">
+        <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__hidden">
+            <div class="custom-checkbox__checkmark"></div>
+            <span class="custom-checkbox__label">Местные технические условия (МТУ)</span>
+        </label>
+    </div>
+    <div class="modal-form__checkbox">
+        <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__hidden">
+            <div class="custom-checkbox__checkmark"></div>
+            <span class="custom-checkbox__label">Схема размещения и крепления негабаритного груза</span>
+        </label>
+    </div> -->
+    <!-- <div class="select-wrapper">
+        <select class="select">
+            <option value="">Санкт-Петербург</option>
+            <option value="">Москва</option>
+        </select>
+    </div> -->
+
+    <!-- <div class="form__row">
+        <div class="form__item">
+            <label class="input-label" for="email">Email</label>
+            <input id="email" class="input" name="email" type="email" >
+            <span class="input-notify">Ошибка</span>
+        </div>
+    </div>
+    <input type="text" class="modal-form__input" placeholder="Организация">
+    <div class="form__row">
+        <div class="form__item">
+            <label class="input-label" for="message">Сообщение:</label>
+            <textarea id="message" class="input" name="message" ></textarea>
+            <span class="input-notify"></span>
+        </div>
+    </div> -->
+
 </form>
+<div id="answer"></div>
+<button class="btn btn--red none" type="submit" close-modal-button="callback">Ок</button>
+
+<!-- required
+required
+required
+required -->

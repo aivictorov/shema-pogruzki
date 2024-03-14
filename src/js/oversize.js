@@ -8,7 +8,7 @@ export function oversizeForm() {
     const pointsField = document.querySelector('#points');
     const resultField = document.querySelector('#result');
     const points = [];
-    let indexArr = [0, 0, 0, 0];
+    let indexArr = [0, 0, 0, 0, false];
 
     addBtn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -77,7 +77,7 @@ export function oversizeForm() {
                 return
             }
 
-            point['index'] = "S"
+            point['index'] = "–";
         });
 
         points.forEach((point) => {
@@ -98,6 +98,9 @@ export function oversizeForm() {
             if (point["zone"] === "верхняя" && point["index"] > indexArr[2]) {
                 indexArr[2] = point["index"];
             }
+            if (point["index"] === "–") {
+                indexArr[4] = true;
+            }
         })
         render(points, pointsField);
         renderIndex(indexArr, resultField)
@@ -105,14 +108,16 @@ export function oversizeForm() {
 
     resetBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        
+
         points.splice(0, points.length)
         render(points, pointsField);
 
-        for (let i = 0; i < indexArr.length; i++) {
+        for (let i = 0; i < 4; i++) {
             indexArr[i] = 0;
         };
-        console.log(indexArr)
+
+        indexArr[4] = false;
+
         renderIndex(indexArr, resultField);
     });
 };
@@ -159,5 +164,9 @@ function render(pointsObj, field) {
 };
 
 function renderIndex(indexArray, field) {
-    field.innerText = 'Индекс негабаритности: Н' + indexArray[0] + indexArray[1] + indexArray[2] + '0';
+    if (indexArray[4]) {
+        field.innerText = 'Размеры груза превышают размеры габарита приближения строений.';
+    } else {
+        field.innerText = 'Индекс негабаритности: Н' + indexArray[0] + indexArray[1] + indexArray[2] + '0';
+    };
 };

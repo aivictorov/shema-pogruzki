@@ -1,0 +1,38 @@
+
+// .modal-form {}
+
+.modal-form__title {
+	font-weight: 600;
+	font-size: 26px;
+	margin-bottom: 11px;
+}
+
+.modal-form__subtitle {
+	margin-bottom: 24px;
+}
+
+.modal-form__checkbox:not(:last-of-type) {
+	margin-bottom: 10px;
+}
+
+.modal-form__input {
+	margin-bottom: 25px;
+	height: 60px;
+	width: 100%;
+	border-bottom: 1px solid #C9C9C9;
+}
+
+.modal-form__button {
+	font-weight: 500;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 100%;
+	height: 54px;
+	line-height: 50px;
+}
+
+.modal-form__notice {
+	margin-top: 20px;
+	font-size: 14px;
+}
+

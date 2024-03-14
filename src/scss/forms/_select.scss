@@ -1,0 +1,36 @@
+.select-wrapper {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+.select {
+	height: 60px;
+	width: 100%;
+	border-bottom: 1px solid #C9C9C9;
+
+	&:focus {
+		border-bottom-color: #d60029;
+	}
+}
+
+.select-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	display: block;
+	
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 6px 5px 0 5px;
+	border-color: #d60029 transparent transparent transparent;
+
+	pointer-events: none;
+}
+
+// .select-wrapper:hover::before {
+// 	border-width: 0 6px 8px 6px;
+// 	border-color: transparent transparent #d60029 transparent;
+// }

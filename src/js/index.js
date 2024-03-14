@@ -1,13 +1,14 @@
 import { oversizeForm } from './oversize.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-	// gallery();
 	modalWindows();
 	scrollup();
 	details();
-	// selects();
 	oversizeForm();
 	callbackForm();
+	// gallery();
+	// selects();
+	inputFile();
 });
 
 function gallery() {
@@ -24,26 +25,19 @@ function gallery() {
 		console.log(img.src)
 
 		modals.insertAdjacentHTML("afterbegin", `
-		<div class="modal" modal-window="gallery">
-			<div class="modal__content modal__content--center modal__content--gallery page-text">
-				<img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
+			<div class="modal" modal-window="gallery">
+				<div class="modal__content modal__content--center modal__content--gallery page-text">
+					<img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
+				</div>
+				<div class="modal__close-button">
+					<svg class="icon icon--close-light">
+						<use xlink:href="./img/icons/sprite.svg#close-light"></use>
+					</svg>
+				</div>
 			</div>
-			<div class="modal__close-button">
-				<svg class="icon icon--close-light">
-					<use xlink:href="./img/icons/sprite.svg#close-light"></use>
-				</svg>
-			</div>
-		</div>
-	`)
-
-	})
-
-	// http://localhost:8000/img/portfolio/img-small.jpg
-
-
-
-
-}
+		`);
+	});
+};
 
 function details() {
 	document.querySelectorAll('[details-button]').forEach((button) => {
@@ -66,7 +60,7 @@ function scrollup() {
 	scrollup.addEventListener('click', () => {
 		window.scrollTo(0, 0);
 	});
-} 
+};
 
 function modalWindows() {
 	document.querySelectorAll('[modal-button]').forEach((button) => {
@@ -74,8 +68,12 @@ function modalWindows() {
 
 		if (modal) {
 			const content = modal.querySelector('.modal__content');
+			const closeBtn = modal.querySelector(`[close-modal-button="${button.getAttribute('modal-button')}"]`);
 
 			button.addEventListener('click', () => {
+				document.querySelectorAll('[modal-window]').forEach((window) => {
+					window.classList.remove('active');
+				});
 				modal.classList.add('active');
 				document.body.classList.add('no-scroll');
 			});
@@ -88,6 +86,13 @@ function modalWindows() {
 				modal.classList.remove('active');
 				document.body.classList.remove('no-scroll');
 			});
+
+			if (closeBtn) {
+				closeBtn.addEventListener('click', () => {
+					modal.classList.remove('active');
+					document.body.classList.remove('no-scroll');
+				});
+			};
 		};
 	});
 
@@ -161,46 +166,86 @@ function selects() {
 };
 
 function callbackForm() {
-	document.querySelector('#form').addEventListener('submit', (event) => {
-		event.preventDefault();
-	});
+	const form = document.querySelector('#form')
+	const answer = document.querySelector('#answer')
 
-	$('#form').validate({
-		rules: {
-			email: {
-				required: true,
-				email: true
-			},
-			message: {
-				required: true
-			}
-		},
-		messages: {
-			email: {
-				required: 'Введите email',
-				email: 'Неверный формат email'
-			},
-			message: {
-				required: 'Введите текст сообщения',
-			}
-		},
-		submitHandler: function (form) {
-			ajaxFormSubmit();
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(form);
+
+		console.log(Array.from(formData));
+
+		fetch('./../php/mail.php', {
+			method: 'POST',
+			body: formData
+		}).then(response => {
+			console.log(response.ok);
+			console.log(response.status);
+
+			response.text().then(responseText => {
+				form.classList.add('none')
+				answer.innerText = responseText;
+
+				const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
+
+				if (closeBtn) {
+					closeBtn.classList.remove('none');
+
+					closeBtn.addEventListener('click', function (event) {
+						form.classList.remove('none');
+						answer.innerText = "";
+						closeBtn.classList.add('none');
+					});
+				};
+			});
+		});
+	});
+};
+
+function inputFile() {
+	let inputFile = document.querySelector('input[type="file"]');
+	console.log(inputFile)
+	// let button = $('#myButton');
+	// let filesContainer = $('#myFiles');
+	// let files = [];
+
+	inputFile.addEventListener('change', function () {
+		if (this.value) {
+			console.log("Оппа, выбрали файл!");
+			console.log(this.value);
+			console.log(inputFile.files[0].name);
+			console.log(inputFile.nextElementSibling.nextElementSibling);
+			inputFile.nextElementSibling.nextElementSibling.innerText = inputFile.files[0].name
+		} else { // Если после выбранного тыкнули еще раз, но дальше cancel
+			console.log("Файл не выбран");
 		}
 	});
 
-	function ajaxFormSubmit() {
-		const string = $('#form').serialize();
 
-		$.ajax({
-			type: "POST",
-			url: "./php/mail.php",
-			data: string,
-			success: function (html) {
-				$('#form').slideUp(800);
-				$('#answer').html(html);
-			}
-		});
-		return false;
-	};
+	// inputFile.change(function () {
+	// let newFiles = [];
+	// for (let index = 0; index < inputFile[0].files.length; index++) {
+	// 	let file = inputFile[0].files[index];
+	// 	newFiles.push(file);
+	// 	files.push(file);
+	// }
+
+	// newFiles.forEach(file => {
+	// 	let fileElement = $(`<p>${file.name}</p>`);
+	// 	fileElement.data('fileData', file);
+	// 	filesContainer.append(fileElement);
+
+	// 	fileElement.click(function (event) {
+	// 		let fileElement = $(event.target);
+	// 		let indexToRemove = files.indexOf(fileElement.data('fileData'));
+	// 		fileElement.remove();
+	// 		files.splice(indexToRemove, 1);
+	// 	});
+	// });
+	// });
+
+	// button.click(function () {
+	// 	inputFile.click();
+	// });
 }
