@@ -172,23 +172,9 @@ function callbackForm() {
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
 
-		// const formData = new FormData(form);
-
-
 		const formData = new FormData(form);
-		// formData.append('name', name);
 
-		// for (let file of sliderImages) {
-		// 	formData.append('sliderImage', file);
-		// }
-
-
-
-
-
-
-
-		console.dir(Array.from(formData));
+		console.log(Array.from(formData));
 
 		fetch('./../php/mail_old.php', {
 			method: 'POST',
