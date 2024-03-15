@@ -115,12 +115,10 @@ function callbackForm() {
 			method: 'POST',
 			body: formData
 		}).then(response => {
-			console.log(response.ok);
-			console.log(response.status);
+			// console.log(response.ok);
+			// console.log(response.status);
 			response.text().then(responseText => {
-				console.log(responseText);
-
-
+				// console.log(responseText);
 				form.classList.add('none')
 				answer.innerText = responseText;
 				const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
@@ -149,6 +147,14 @@ function inputFile() {
 			if (input.files.length > 0) {
 				info.innerText = `Прикреплено файлов: ${input.files.length}`;
 			} else {
+				info.innerText = "Прикрепить файл";
+			};
+		});
+
+		input.addEventListener('change', function () {
+			if (input.files.length > 3) {
+				input.value = "";
+				alert('Ошибка! Нельзя прикреплять больше 3 файлов');
 				info.innerText = "Прикрепить файл";
 			};
 		});
