@@ -1,5 +1,3 @@
-// 1:30:59 / 2:48:52
-
 // Gulp
 
 const gulp = require('gulp');
@@ -9,7 +7,6 @@ const gulp = require('gulp');
 const fs = require('fs');
 const clean = require('gulp-clean');
 const nunjucks = require('gulp-nunjucks');
-// const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('sass'));
 const server = require('gulp-server-livereload');
 const sourceMaps = require('gulp-sourcemaps');
@@ -19,19 +16,11 @@ const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
 
-// import {nunjucksCompile} from 'gulp-nunjucks';
-
-
 // Settings
 
 const cleanSettings = {
     force: true
 }
-
-// const fileIncludeSettings = {
-//     prefix: '@@',
-//     basepath: '@file'
-// };
 
 const sassSettings = {
     indentType: 'tab',
@@ -68,7 +57,6 @@ gulp.task('html', function () {
     return gulp.src('./src/html/*.html')
         .pipe(plumber(plumberSettings('HTML')))
         .pipe(nunjucks.compile())
-        // .pipe(fileInclude(fileIncludeSettings))
         .pipe(gulp.dest('./dist/'));
 });
 

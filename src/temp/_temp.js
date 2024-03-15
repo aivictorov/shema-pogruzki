@@ -109,3 +109,15 @@ $(window).scroll(function () {
 		}
 	});
 });
+
+function details() {
+	document.querySelectorAll('[details-button]').forEach((button) => {
+		const details = document.querySelector(`[details-content="${button.getAttribute('details-button')}"]`);
+
+		if (details) {
+			button.addEventListener('click', () => {
+				details.classList.toggle('none');
+			});
+		};
+	});
+};

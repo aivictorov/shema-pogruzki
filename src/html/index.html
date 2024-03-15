@@ -1,29 +1,30 @@
 <!DOCTYPE html>
+{% set title = "Схемы погрузки .РФ | Разработка схем размещения и крепления грузов" %}
+{% set url = "схема-погрузки.рф" %}
+{% set description = "Наша специализация - разработка схем размещения и крепления грузов на железнодорожном транспорте. Работаем по всей сети железных дорог РФ и СНГ с 2010 года. Накопленный опыт проектирования позволяет в сжатые сроки решать даже самые сложные технические задачи." %}
+{% set keywords = "схема погрузки, эскиз погрузки, чертеж погрузки, НТУ, МТУ, железная дорога, жд, груз, перевозка, негабарит, платформа, полувагон, крытый вагон, транспортер" %}
+
 <html lang="ru-RU">
-
-    {% set sitename = "Схемы погрузки | Разработка схем размещения и крепления грузов" %}
-
     <head>
-        <!-- encoding -->
+        <!-- Encoding -->
         <meta charset="UTF-8">
+
         <!-- Mobile support -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- Title and SEO -->
-        <title>{{ sitename }}</title>
-        <meta name="description" content="Описание страницы"/>
-        <meta name="keywords"
-        content="схема погрузки, эскиз погрузки, чертеж погрузки, НТУ, МТУ,  железная дорога, жд, груз, негабарит, платформа, полувагон, крытый вагон, транспортер"/>
+        <title>{{ title }}</title>
+        <meta name="description" content="{{ description }}"/>
+        <meta name="keywords" content="{{ keywords }}"/>
 
         <!-- Styles -->
-        <!-- <link rel="stylesheet" href="./libs/owl-carousel/owl.carousel.min.css"> -->
         <link rel="stylesheet" href="./css/main.css"/>
 
-        <!-- Open Graph -->
-        <meta property="og:url" content="https://site.ru/"/>
+        <!-- OpenGraph -->
+        <meta property="og:url" content="{{ url }}"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Схема погрузки"/>
-        <meta property="og:description" content="Description"/>
+        <meta property="og:title" content="{{ title }}"/>
+        <meta property="og:description" content="{{ description }}"/>
         <meta property="og:image" content="./img/opengraph.jpg"/>
 
         <!-- Favicons -->
@@ -54,7 +55,7 @@
         {% include './sections/footer.html' %}
         {% include './blocks/scrollup.html' %}
 
-        <!-- Custom scripts -->
+        <!-- Scripts -->
         <script src="./js/index.bundle.js"></script>
     </body>
 

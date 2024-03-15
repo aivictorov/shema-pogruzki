@@ -15,14 +15,7 @@
     <!-- oversize -->
     <div class="modal" modal-window="oversize">
         <div class="modal__content modal__content--right">
-
-
-
-            <div class="policy-check__form">
-                {% include './../forms/oversize-form.html' %}
-            </div>
-
-            
+            {% include './../forms/oversize-form.html' %}
         </div>
         <div class="modal__close-button">
             <svg class="icon icon--close">
@@ -32,33 +25,51 @@
     </div>
     <!-- //oversize -->
 
-    <!-- gallery -->
-    <div class="modal" modal-window="gallery">
-        <div class="modal__content modal__content--center modal__content--gallery page-text">
-            <img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
+    <!-- services -->
+    {% macro serviceModal(title = '', text = '', name = '') %}
+        <div class="modal" modal-window="{{ name }}">
+            <div class="modal__content modal__content--center">
+                <div class="modal-content__title">
+                    <h3>{{ title }}</h3>
+                </div>
+                <div class="modal-content__text">
+                    <p>{{ text }}</p>
+                </div>
+                <div class="modal-content__btn">
+                    <button class="btn btn--red" modal-button="callback">Заказать</button>
+                </div>
+            </div>
+            <div class="modal__close-button">
+                <svg class="icon icon--close-light">
+                    <use xlink:href="./img/icons/sprite.svg#close-light"></use>
+                </svg>
+            </div>
         </div>
-        <div class="modal__close-button">
-            <svg class="icon icon--close-light">
-                <use xlink:href="./img/icons/sprite.svg#close-light"></use>
-            </svg>
-        </div>
-    </div>
-    <!-- //gallery -->
+    {% endmacro %}
 
-    <!-- service-details -->
-    <div class="modal" modal-window="service-details">
-        <div class="modal__content modal__content--center modal__content--service-details page-text">
-            <h3>Разработка схем НТУ</h3>
-            <p style="text-align: left; margin-bottom: 20px;">
-                Схема НТУ разрабатывается в случае, если способ размещения и крепления груза не предусмотрен действующими сетевыми или местными техническими условиями. Схемы погрузки НТУ предназначены для осуществления разовых либо нерегулярных перевозок грузов. Срок действия НТУ 5 лет.
-            </p>
-            <button class="btn btn--red" modal-button="callback">Заказать</button>
-        </div>
-        <div class="modal__close-button">
-            <svg class="icon icon--close-light">
-                <use xlink:href="./img/icons/sprite.svg#close-light"></use>
-            </svg>
-        </div>
-    </div>
-    <!-- //service-details -->
+    {{ serviceModal(
+            title='Эскизы погрузки', 
+            text='Эскиз погрузки – это документ, поясняющий требования технических условий. Эскиз разрабатывается в случае, если способ размещения и крепления груза предусмотрен действующими сетевыми или местными техническими условиями, но схема размещения и крепления конкретного типоразмера данного груза отсутствует. Ограничений по сроку действия эскизов действующими нормативными документами не устанавливается.',
+            name='sketch'
+        ) 
+    }}
+
+    {{ serviceModal('Схемы НТУ', 
+            text='Схема НТУ разрабатывается в случае, если способ размещения и крепления груза не предусмотрен действующими сетевыми или местными техническими условиями. Схемы погрузки НТУ предназначены для осуществления разовых либо нерегулярных перевозок грузов. НТУ могут использоваться только тем грузоотправителем, для которого они разработаны. Срок действия НТУ – 5 лет.',
+            name='ntu'
+        ) 
+    }}
+
+    {{ serviceModal('Местные технические условия (МТУ)', 
+            text='Местные технические условия (МТУ) разрабатываются для регулярных перевозок грузов, способы размещения и крепления которых не предусмотрены действующими сетевыми ТУ.  При согласовании МТУ проводится экспериментальная проверка способа размещения и крепления груза. Утвержденные МТУ могут использоваться всеми отправителями, обслуживаемыми перевозчиком, утвердившим МТУ. Срок действия МТУ – 7 лет.',
+            name='mtu'
+        ) 
+    }}
+
+    {{ serviceModal('Чертежи погрузки негабаритных и тяжеловесных грузов', 
+            text='Техническая документация на перевозку негабаритных и (или) тяжеловесных грузов разрабатывается в соответствии с требованиями ТУ и Инструкции ДЧ-1835 и включает в себя чертеж размещения и крепления негабаритного (тяжеловесного) груза, расчетно-пояснительную записку и в некоторых случаях чертеж контрольной рамы (для сверхнегабаритных грузов и грузов с нижней и боковой негабаритностью 6-й степени).',
+            name='n8888'
+        )
+    }}
+    <!-- //services -->
 </div>

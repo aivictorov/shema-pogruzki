@@ -21,7 +21,7 @@
 .modal__content {
 	margin: 0 auto;
 	padding: 40px 45px;
-	max-width: 560px;
+	max-width: 600px;
 	background-color: #FFF;
 	cursor: default;
 
@@ -36,24 +36,26 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		// bottom: 0;
 		padding: 40px 45px;
 		max-width: 600px;
 		min-height: 100%;
 	}
-
-	&--gallery {
-		max-width: 100%;
-
-		img {
-			width: 1200px;
-		}
-	}
-
-	.h3 {
-		font-weight: 700;
-	}
 }
+
+
+.modal-content__title {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.modal-content__text p+p {
+	margin-top: 10px;
+}
+
+.modal-content__btn {
+	margin-top: 25px;
+}
+
 
 .modal__close-button {
 	position: absolute;

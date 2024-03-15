@@ -9,18 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	inputFile();
 });
 
-function details() {
-	document.querySelectorAll('[details-button]').forEach((button) => {
-		const details = document.querySelector(`[details-content="${button.getAttribute('details-button')}"]`);
-
-		if (details) {
-			button.addEventListener('click', () => {
-				details.classList.toggle('none');
-			});
-		};
-	});
-};
-
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');
 	scrollup.style.opacity = 0;
@@ -46,6 +34,7 @@ function modalWindows() {
 				});
 				modal.classList.add('active');
 				document.body.classList.add('no-scroll');
+				modal.scrollTo(0, 0);
 			});
 
 			content.addEventListener('mousedown', (event) => {
@@ -115,10 +104,7 @@ function callbackForm() {
 			method: 'POST',
 			body: formData
 		}).then(response => {
-			// console.log(response.ok);
-			// console.log(response.status);
 			response.text().then(responseText => {
-				// console.log(responseText);
 				form.classList.add('none')
 				answer.innerText = responseText;
 				const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');

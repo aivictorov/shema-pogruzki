@@ -11,14 +11,15 @@
         height: 12px;
     }
 
+    &--close,
+    &--close-light {
+        width: 30px;
+        height: 30px;
+    }
+
     &--logo {
         width: 234px;
         height: 50px;
-    }
-
-    &--phone {
-        width: 18px;
-        height: 18px;
     }
 
     &--mail {
@@ -26,10 +27,9 @@
         height: 18px;
     }
 
-    &--close,
-    &--close-light {
-        width: 30px;
-        height: 30px;
+    &--phone {
+        width: 18px;
+        height: 18px;
     }
 
     &--plus {
