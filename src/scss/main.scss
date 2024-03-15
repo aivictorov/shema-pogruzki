@@ -1,23 +1,23 @@
-// Base
-@import "./base/reset";
-@import "./base/vars";
-@import "./base/fonts";
-@import "./base/base";
-@import "./base/utility";
+// System
+@import "./system/reset";
+@import "./system/fonts";
+@import "./system/vars";
+@import "./system/utils";
 
-// Common
-@import "./common/icons";
-@import "./common/typography";
-@import "./common/buttons";
-@import "./common/links";
-@import "./common/page";
+// Base
+@import "./base/base";
+@import "./base/buttons";
+@import "./base/headers";
+@import "./base/icons";
+@import "./base/links";
 
 // Blocks
+@import "./blocks/footer";
+@import "./blocks/header";
 @import "./blocks/logo";
 @import "./blocks/menu";
 @import "./blocks/scrollup";
 @import "./blocks/section-title";
-@import "./blocks/faq";
 
 // Cards
 @import "./cards/service-card";
@@ -37,8 +37,6 @@
 @import "./modals/modals";
 
 // Sections
-@import "./sections/header";
-@import "./sections/footer";
 @import "./sections/slider";
 @import "./sections/services";
 @import "./sections/articles";

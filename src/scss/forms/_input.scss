@@ -1,18 +1,43 @@
-.input {
+// input[type="text"] & textarea
+
+.input__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__name {
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1;
+    color: #000;
+}
+
+.input__field {
+    padding: 0 17px;
+    height: 48px;
+    border: 1px solid $gray-input;
     font-family: $baseFont;
     width: 100%;
     transition: $med;
     background: $white;
     font-size: 15px;
     color: $dark;
-    height: 48px;
-    border: 1px solid $gray-input;
-    padding: 0 17px;
     font-weight: 300;
 
     &--large {
         height: 54px;
         padding: 0 25px;
+    }
+
+    &.textarea {
+        padding: 12px 17px;
+        height: 120px;
+        resize: none;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &::placeholder {
@@ -21,26 +46,7 @@
     }
 }
 
-textarea.input {
-    padding: 12px 17px;
-    height: 120px;
-    resize: none;
-
-    &:focus {
-        outline: none;
-    }
-}
-
-.input-label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-    font-size: 15px;
-    line-height: 1;
-    color: #000;
-}
-
-.input-notify {
+.input__notify {
     display: none;
     font-size: 12px;
     line-height: 1.21;
@@ -48,6 +54,8 @@ textarea.input {
     margin-top: 5px;
     text-align: left;
 }
+
+// input[type="file"]
 
 .input-file__label {
     display: flex;

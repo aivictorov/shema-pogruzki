@@ -3,7 +3,6 @@ import { oversizeForm } from './oversize.js';
 window.addEventListener('DOMContentLoaded', () => {
 	modalWindows();
 	scrollup();
-	details();
 	oversizeForm();
 	callbackForm();
 	inputFile();

@@ -43,20 +43,23 @@
 	}
 }
 
-.header-bottom__item {
-	display: flex;
-	align-items: center;
-	padding: 0 10px;
-	min-height: 84px;
+.header-top__info {
+	font-size: 15px;
+	line-height: 1.4;
+	font-weight: 400;
 }
 
-
-
-.header-top__phone {
+.header-top__link {
 	display: flex;
 	column-gap: 10px;
 	font-size: 15px;
 	line-height: 1.4;
 	font-weight: 400;
-	padding-left: 4px;
+}
+
+.header-bottom__item {
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	min-height: 84px;
 }

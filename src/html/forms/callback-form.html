@@ -4,39 +4,64 @@
     </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="company">Наименование организации</label>
-            <input class="input" type="text" placeholder="Наименование организации" name="company" required>
-            <span class="input-notify"></span>
+            <div class="input">
+                <label class="input__label">
+                    <span class="input__name">Наименование организации</span>
+                    <input class="input__field" type="text" placeholder="Наименование организации" name="company"
+                        autocomplete="company" required>
+                </label>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="name">Контактное лицо</label>
-            <input class="input" type="text" placeholder="Ваше имя" name="name" required>
-            <span class="input-notify"></span>
+            <div class="input">
+                <label class="input__label">
+                    <span class="input__name">Контактное лицо</span>
+                    <input class="input__field" type="text" placeholder="Ваше имя" name="name" autocomplete="name"
+                        required>
+                </label>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="phone">Телефон</label>
-            <input class="input" type="text" placeholder="Ваш телефон" name="phone" required>
-            <span class="input-notify"></span>
+            <div class="input">
+                <label class="input__label">
+                    <span class="input__name">Телефон</span>
+                    <input class="input__field" type="text" placeholder="Ваш телефон" name="phone" autocomplete="phone"
+                        required>
+                </label>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="email">Электронная почта</label>
-            <input class="input" type="text" placeholder="Адрес электронной почты" name="email" required>
-            <span class="input-notify"></span>
+            <div class="input">
+                <label class="input__label">
+                    <span class="input__name">Электронная почта</span>
+                    <input class="input__field" type="text" placeholder="Адрес электронной почты" name="email"
+                        autocomplete="email" required>
+                </label>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="message">Сообщение</label>
-            <textarea id="message" class="input" name="message"></textarea>
-            <span class="input-notify"></span>
+            <div class="input">
+                <label class="input__label">
+                    <span class="input__name">Сообщение</span>
+                    <textarea class="input__field textarea" name="message"></textarea>
+                </label>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
+
     <div class="form__row">
         <div class="form__item">
             <div class="input-file">
@@ -50,7 +75,8 @@
                     </div>
                     <div class="input-file__text">
                         <div class="input-file__info">Прикрепить файл</div>
-                        <div class="input-file__notice">Вы можете прикрепить не более 3 файлов формата PDF, JPG, PNG размером до 5 мб каждый.</div>
+                        <div class="input-file__notice">Вы можете прикрепить не более 3 файлов формата PDF, JPG, PNG
+                            размером до 5 мб каждый.</div>
                     </div>
                 </label>
                 <span class="input-notify"></span>
