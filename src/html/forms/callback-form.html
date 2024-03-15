@@ -1,115 +1,79 @@
-<!-- <form class="form" id="form">
-    <div class="form__title">
+<form class="form" id="form" enctype='multipart/form-data'>
+    <div class="form__title form__title--center">
         <h3 class="h3">Заполните форму</h3>
     </div>
-    <div class="form__instruction form__instruction--center">
-        Мы свяжемся с вами в ближайшее время.
-    </div>
     <div class="form__row">
         <div class="form__item">
-            <label class="input-label" for="email">Ваш Email</label>
-            <input id="email" class="input" name="email" type="email" >
-            <span class="input-notify">Ошибка</span>
-        </div>
-    </div>
-    <div class="form__row">
-        <div class="form__item">
-            <label class="input-label" for="message">Ваш Email</label>
-            <textarea id="message" class="input" name="message" ></textarea>
+            <label class="input-label" for="company">Наименование организации</label>
+            <input class="input" type="text" placeholder="Наименование организации" name="company" required>
             <span class="input-notify"></span>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <button type="submit" class="btn btn--red">Отправить</button>
-        </div>
-    </div>
-
-    <div class="form__notice">
-        Нажимая на кнопку "Отправить", вы соглашаетесь с политикой конфиденциальности.
-    </div>
-</form> -->
-
-<form class="modal-form" id="form" enctype='multipart/form-data'>
-
-    <div class="modal-form__title">Заполните форму</div>
-    <!-- <div class="modal-form__subtitle">Мы свяжемся с вами в ближайшее время</div> -->
-    <input type="text" class="modal-form__input" placeholder="Ваше имя" name="name">
-    <input type="text" class="modal-form__input" placeholder="Ваш телефон" name="phone">
-    <div class="form__row">
-        <div class="input-file">
-            <label class="input-file__label">
-                <input class="input-file__hidden visually-hidden" name="file[]" type="file" accept="application/pdf, image/jpeg, image/png" multiple>
-                <div class="input-file__custom"></div>
-                <div class="input-file__text">Прикрепить файл</div>
-            </label>
-        </div>
-    </div>
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <div class="g-recaptcha" data-sitekey="6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs"></div>
-
-    <button class="btn btn--red" type="submit">Заказать</button>
-    <div class="modal-form__notice">
-        Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности
-    </div>
-    <!-- <div style="text-align: left;">Выберите необходимую услугу:</div>
-    <div class="modal-form__checkbox">
-        <label class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__hidden">
-            <div class="custom-checkbox__checkmark"></div>
-            <span class="custom-checkbox__label">Эскиз размещения и крепления груза</span>
-        </label>
-    </div>
-    <div class="modal-form__checkbox">
-        <label class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__hidden">
-            <div class="custom-checkbox__checkmark"></div>
-            <span class="custom-checkbox__label">Непредусмотренные технические условия (НТУ)</span>
-        </label>
-    </div>
-    <div class="modal-form__checkbox">
-        <label class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__hidden">
-            <div class="custom-checkbox__checkmark"></div>
-            <span class="custom-checkbox__label">Местные технические условия (МТУ)</span>
-        </label>
-    </div>
-    <div class="modal-form__checkbox">
-        <label class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__hidden">
-            <div class="custom-checkbox__checkmark"></div>
-            <span class="custom-checkbox__label">Схема размещения и крепления негабаритного груза</span>
-        </label>
-    </div> -->
-    <!-- <div class="select-wrapper">
-        <select class="select">
-            <option value="">Санкт-Петербург</option>
-            <option value="">Москва</option>
-        </select>
-    </div> -->
-
-    <!-- <div class="form__row">
-        <div class="form__item">
-            <label class="input-label" for="email">Email</label>
-            <input id="email" class="input" name="email" type="email" >
-            <span class="input-notify">Ошибка</span>
-        </div>
-    </div>
-    <input type="text" class="modal-form__input" placeholder="Организация">
-    <div class="form__row">
-        <div class="form__item">
-            <label class="input-label" for="message">Сообщение:</label>
-            <textarea id="message" class="input" name="message" ></textarea>
+            <label class="input-label" for="name">Контактное лицо</label>
+            <input class="input" type="text" placeholder="Ваше имя" name="name" required>
             <span class="input-notify"></span>
         </div>
-    </div> -->
-
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <label class="input-label" for="phone">Телефон</label>
+            <input class="input" type="text" placeholder="Ваш телефон" name="phone" required>
+            <span class="input-notify"></span>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <label class="input-label" for="email">Электронная почта</label>
+            <input class="input" type="text" placeholder="Адрес электронной почты" name="email" required>
+            <span class="input-notify"></span>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <label class="input-label" for="message">Сообщение</label>
+            <textarea id="message" class="input" name="message"></textarea>
+            <span class="input-notify"></span>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <div class="input-file">
+                <label class="input-file__label">
+                    <input class="input-file__hidden visually-hidden" name="file[]" type="file"
+                        accept="application/pdf, image/jpeg, image/png" multiple>
+                    <div class="input-file__icon">
+                        <svg class="icon icon--plus">
+                            <use xlink:href="./img/icons/sprite.svg#plus"></use>
+                        </svg>
+                    </div>
+                    <div class="input-file__text">
+                        <div class="input-file__info">Прикрепить файл</div>
+                        <div class="input-file__notice">Вы можете прикрепить не более 3 файлов формата PDF, JPG, PNG до 5 Мб каждый.</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item form__item--capatcha">
+            <div class="g-recaptcha" data-sitekey="6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs"></div>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <button class="btn btn--red" type="submit">Заказать</button>
+        </div>
+    </div>
+    <div class="form__row">
+        <div class="form__item">
+            <div class="form__notice">Нажимая на кнопку, Вы соглашаетесь с политикой конфиденциальности</div>
+        </div>
+    </div>
 </form>
-<div id="answer"></div>
-<button class="btn btn--red none" type="submit" close-modal-button="callback">Ок</button>
 
-<!-- required
-required
-required
-required -->
+<div id="answer"></div>
+
+<button class="btn btn--red none" type="submit" close-modal-button="callback">Ок</button>

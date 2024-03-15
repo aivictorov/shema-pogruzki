@@ -8,6 +8,12 @@ $secret = '6LcXOZkpAAAAAEOdaE7jlHtaKWIvoavt_0IekIwR';
 
 $from = '=?UTF-8?B?' . base64_encode($from_name) . '?=' . ' <' . $from_email . '>';
 
+$_POST = array_map('trim', $_POST);
+
+if (empty(trim($_POST['name']))) echo "Не заполнено имя.";
+if (empty(trim($_POST['phone']))) echo "Не заполнен телефон.";
+if (empty(trim($_POST['email']))) echo "Не заполнен email.";
+
 foreach ($_POST as $key => $value) {
 	if (
 		$key != 'g-recaptcha-response' &&
@@ -30,9 +36,9 @@ if (!empty($_POST['g-recaptcha-response'])) {
 		} else {
 			echo "Извините, письмо не отправлено. Попробуйте еще раз.";
 		};
-	} else {
-		echo "Ошибка заполнения капчи.";
-	}
+	};
+} else {
+	echo "Ошибка заполнения капчи.";
 };
 
 function sendMailWithAttachment($to, $from, $subject_text, $message_text)
@@ -52,26 +58,16 @@ function sendMailWithAttachment($to, $from, $subject_text, $message_text)
 	if (!empty($_FILES["file"]['name'][0])) {
 
 		foreach ($_FILES["file"]["name"] as $key => $value) {
-
 			$filename = $_FILES["file"]["tmp_name"][$key];
 			$fileSize = $_FILES["file"]["size"][$key];
 
 			if ($fileSize > (5 * 1024 * 1024)) {
 				echo 'Слишком большой файл.';
-			}
-
-			echo "<br>";
-			print_r($_FILES["file"]["name"][$key]);
-			echo "<br>";
-			print_r(preg_match("/\.(jpg|jpeg|png|pdf)$/i", $_FILES["file"]["name"][$key]));
-			echo "<br>";
-			print_r($filename);
-			echo "<br>";
-			print_r(mime_content_type($filename));
-			echo "<br>";
+				return false;
+			};
 
 			if (
-				preg_match("/\.(jpg|jpeg|png|pdf)$/i", $_FILES["file"]["name"][$key]) ||
+				preg_match("/\.(jpg|jpeg|png|pdf)$/i", $_FILES["file"]["name"][$key]) &&
 				mime_content_type($filename) == "image/jpeg" ||
 				mime_content_type($filename) == "image/png" ||
 				mime_content_type($filename) == "application/pdf"
@@ -89,6 +85,7 @@ function sendMailWithAttachment($to, $from, $subject_text, $message_text)
 				$multipart .= chunk_split(base64_encode($File));
 			} else {
 				echo 'Неверный формат файла.';
+				return false;
 			};
 		};
 	};

@@ -799,7 +799,3 @@ export const constructionSize = [
     [5290, 1774],
     [5300, 1770]
 ]
-
-
-
-

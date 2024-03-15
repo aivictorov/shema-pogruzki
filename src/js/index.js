@@ -6,38 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	details();
 	oversizeForm();
 	callbackForm();
-	// gallery();
-	// selects();
 	inputFile();
 });
-
-function gallery() {
-	const modals = document.querySelector('.modals')
-	const portfolio = document.querySelector('.portfolio__row')
-
-	portfolio.querySelectorAll('img').forEach((img) => {
-
-		let string = img.src
-		string = string.split('/')[string.split('/').length - 1].split('.')[0].split('img-')[1];
-
-		console.log(string)
-		img.src = img.src.replace("small", "big");
-		console.log(img.src)
-
-		modals.insertAdjacentHTML("afterbegin", `
-			<div class="modal" modal-window="gallery">
-				<div class="modal__content modal__content--center modal__content--gallery page-text">
-					<img class="img" src="./img/portfolio/img-small.jpg" alt="" style="width: 100%;">
-				</div>
-				<div class="modal__close-button">
-					<svg class="icon icon--close-light">
-						<use xlink:href="./img/icons/sprite.svg#close-light"></use>
-					</svg>
-				</div>
-			</div>
-		`);
-	});
-};
 
 function details() {
 	document.querySelectorAll('[details-button]').forEach((button) => {
@@ -112,59 +82,6 @@ function modalWindows() {
 	};
 };
 
-function selects() {
-	document.querySelectorAll('.select').forEach(function (select) {
-		const selectButton = select.querySelector('.select__button');
-		const selectList = select.querySelector('.select__list');
-		const selectListItems = select.querySelectorAll('.select__list li');
-		const selectInputHidden = select.querySelector('.select__input-hidden');
-		const selectIcon = select.querySelector('.select__icon');
-
-		selectButton.addEventListener('click', (event) => {
-			event.preventDefault();
-			selectList.classList.toggle('visible');
-			selectButton.classList.toggle('active');
-			selectIcon && selectIcon.classList.toggle('active');
-		});
-
-		selectIcon.addEventListener('click', (event) => {
-			event.stopPropagation();
-			selectList.classList.toggle('visible');
-			selectButton.classList.toggle('active');
-			selectIcon && selectIcon.classList.toggle('active');
-		});
-
-		selectListItems.forEach((item) => {
-			item.addEventListener('click', (event) => {
-				selectButton.innerText = item.innerText;
-				selectInputHidden.value = item.dataset.value;
-				selectList.classList.remove('visible');
-				selectButton.classList.remove('active');
-				selectIcon && selectIcon.classList.remove('active');
-				selectButton.focus();
-				event.stopPropagation();
-			});
-		});
-
-		document.addEventListener('click', (event) => {
-			if (event.target !== selectButton) {
-				selectList.classList.remove('visible');
-				selectButton.classList.remove('active');
-				selectIcon && selectIcon.classList.remove('active');
-			};
-		});
-
-		document.addEventListener('keydown', (event) => {
-			if (event.key === 'Tab' || event.key === 'Escape') {
-				selectList.classList.remove('visible');
-				selectButton.classList.remove('active');
-				selectIcon && selectIcon.classList.remove('active');
-				selectButton.blur();
-			};
-		});
-	});
-};
-
 function callbackForm() {
 	const form = document.querySelector('#form')
 	const answer = document.querySelector('#answer')
@@ -172,34 +89,40 @@ function callbackForm() {
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
 
-		// const formData = new FormData(form);
+		if (form.querySelector('[name="name"]').value.trim() == "") {
+			alert('Не заполнено имя');
+			return false;
+		};
 
+		if (form.querySelector('[name="phone"]').value.trim() == "") {
+			alert('Не заполнен телефон');
+			return false;
+		};
+
+		if (form.querySelector('[name="email"]').value.trim() == "") {
+			alert('Не заполнен email');
+			return false;
+		};
+
+		if (!grecaptcha.getResponse()) {
+			alert('Вы не заполнили поле Я не робот!');
+			return false;
+		};
 
 		const formData = new FormData(form);
-		// formData.append('name', name);
 
-		// for (let file of sliderImages) {
-		// 	formData.append('sliderImage', file);
-		// }
-
-
-
-
-
-
-
-		console.dir(Array.from(formData));
-
-		fetch('./../php/mail_old.php', {
+		fetch('./../php/mail.php', {
 			method: 'POST',
 			body: formData
 		}).then(response => {
-			// console.log(response.ok);
-			// console.log(response.status);
+			console.log(response.ok);
+			console.log(response.status);
 			response.text().then(responseText => {
+				console.log(responseText);
+
+
 				form.classList.add('none')
 				answer.innerText = responseText;
-
 				const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
 
 				if (closeBtn) {
@@ -217,50 +140,17 @@ function callbackForm() {
 	});
 };
 
-
 function inputFile() {
-	let inputFile = document.querySelector('input[type="file"]');
-	console.log(inputFile)
-	// let button = $('#myButton');
-	// let filesContainer = $('#myFiles');
-	// let files = [];
+	document.querySelectorAll('input[type="file"]').forEach((input) => {
+		const label = input.closest('label')
+		const info = label.querySelector('.input-file__info');
 
-	inputFile.addEventListener('change', function () {
-		if (this.value) {
-			console.log("Оппа, выбрали файл!");
-			console.log(this.value);
-			console.log(inputFile.files[0].name);
-			console.log(inputFile.nextElementSibling.nextElementSibling);
-			inputFile.nextElementSibling.nextElementSibling.innerText = inputFile.files[0].name
-		} else { // Если после выбранного тыкнули еще раз, но дальше cancel
-			console.log("Файл не выбран");
-		}
+		input.addEventListener('change', function () {
+			if (input.files.length > 0) {
+				info.innerText = `Прикреплено файлов: ${input.files.length}`;
+			} else {
+				info.innerText = "Прикрепить файл";
+			};
+		});
 	});
-
-
-	// inputFile.change(function () {
-	// let newFiles = [];
-	// for (let index = 0; index < inputFile[0].files.length; index++) {
-	// 	let file = inputFile[0].files[index];
-	// 	newFiles.push(file);
-	// 	files.push(file);
-	// }
-
-	// newFiles.forEach(file => {
-	// 	let fileElement = $(`<p>${file.name}</p>`);
-	// 	fileElement.data('fileData', file);
-	// 	filesContainer.append(fileElement);
-
-	// 	fileElement.click(function (event) {
-	// 		let fileElement = $(event.target);
-	// 		let indexToRemove = files.indexOf(fileElement.data('fileData'));
-	// 		fileElement.remove();
-	// 		files.splice(indexToRemove, 1);
-	// 	});
-	// });
-	// });
-
-	// button.click(function () {
-	// 	inputFile.click();
-	// });
-}
+};

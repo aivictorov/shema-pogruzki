@@ -1,5 +1,4 @@
 import { loadingSize, oversize1, oversize2, oversize3, oversize4, oversize5, oversize6, constructionSize } from './data.js';
-import { checkY, checkX } from './validation.js';
 
 export function oversizeForm() {
     const addBtn = document.querySelector('#addBtn');
@@ -170,3 +169,13 @@ function renderIndex(indexArray, field) {
         field.innerText = 'Индекс негабаритности: Н' + indexArray[0] + indexArray[1] + indexArray[2] + '0';
     };
 };
+
+function checkY(y) {
+    if (y < 480 || y > 5300) return false
+    return true;
+}
+
+function checkX(x) { 
+    if (x < 1 || x > 3000) return false
+    return true;
+}

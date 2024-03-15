@@ -5,6 +5,10 @@
 
 .form__title {
     margin-bottom: 30px;
+
+    &--center {
+        text-align: center;
+    }
 }
 
 .form__text {
@@ -38,6 +42,13 @@
 .form__item {
     padding: 0 5px;
     flex: 1;
+
+    &--capatcha {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
 .form__subtitle {
@@ -51,7 +62,7 @@
 }
 
 .form__notice {
+    text-align: center;
     font-size: 12px;
     line-height: 1.25;
 }
-

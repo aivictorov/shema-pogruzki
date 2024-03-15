@@ -19,14 +19,16 @@
         color: $gray-placeholder;
         opacity: 1;
     }
+}
 
-    // &:focus {
-    //     border-color: $gray-placeholder;
-    // }
+textarea.input {
+    padding: 12px 17px;
+    height: 120px;
+    resize: none;
 
-    // &.error {
-    //     border-color: $red;
-    // }
+    &:focus {
+        outline: none;
+    }
 }
 
 .input-label {
@@ -47,52 +49,34 @@
     text-align: left;
 }
 
-
-
-// .label {
-//     display: block;
-//     font-size: 15px;
-//     line-height: 1.13;
-//     letter-spacing: 0.03em;
-//     color: $gray-placeholder;
-//     font-weight: 300;
-
-//     &__small {
-//         font-size: 12px;
-//         font-weight: 500;
-//     }
-
-//     span {
-//         display: block;
-//     }
-
-//     &--fixed {
-//         position: absolute;
-//         left: 0;
-//         right: 0;
-//         top: 0;
-//         bottom: 0;
-//         padding: 15px 10px 10px 25px;
-//     }
-// }
-
 .input-file__label {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.input-file__custom {
+.input-file__icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     width: 48px;
     height: 48px;
-    border: 1px solid $black;
-    border-radius: 4px;
+    border: 1px solid $gray-input;
 }
 
 .input-file__text {
-    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.input-file__info {
     font-weight: 500;
     font-size: 16px;
+    line-height: 1.2;
+}
+
+.input-file__notice {
+    font-size: 12px;
+    line-height: 1.2;
 }
