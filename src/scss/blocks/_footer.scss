@@ -1,5 +1,5 @@
 .footer {
-    padding: 43px 0 40px;
+    padding: 45px 0;
     background-color: rgb(241, 245, 247);
 }
 
@@ -11,34 +11,25 @@
 .footer__item {
     display: flex;
     flex-direction: column;
-    // row-gap: 10px;
+    row-gap: 3px;
     line-height: 1.25;
+
+    &--right {
+        align-items: flex-end;
+    }
 }
 
-// .footer__name {
-//     font-size: 15px;
-//     line-height: 1.2;
-//     font-weight: 700;
-// }
+.footer__phone,
+.footer__name {
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 700;
+}
 
-// .footer__adress {
-//     font-size: 13px;
-//     line-height: 1.5;
-//     font-weight: 500;
-// }
-
-// .footer__phone a.link {
-//     font-size: 15px;
-//     line-height: 1.2;
-//     font-weight: 700;
-// }
-
-// .footer__email a.link {
-//     font-size: 13px;
-//     line-height: 1.5;
-//     font-weight: 500;
-// }
-
-// .footer__social {
-//     display: flex;
-// }
+.footer__adress,
+.footer__email,
+.footer__email a.link {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+}

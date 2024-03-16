@@ -1,5 +1,10 @@
 // input[type="text"] & textarea
 
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
 .input__label {
     display: flex;
     flex-direction: column;
@@ -30,6 +35,10 @@
         padding: 0 25px;
     }
 
+    &--error {
+        border: 1px solid #C20D19;
+    }
+
     &.textarea {
         padding: 12px 17px;
         height: 120px;
@@ -47,11 +56,9 @@
 }
 
 .input__notify {
-    display: none;
     font-size: 12px;
     line-height: 1.21;
     color: #C20D19;
-    margin-top: 5px;
     text-align: left;
 }
 

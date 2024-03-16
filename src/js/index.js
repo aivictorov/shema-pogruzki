@@ -1,4 +1,5 @@
 import { oversizeForm } from './oversize.js';
+import { validate, validateEmail, validateCaptcha } from './validation.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 	modalWindows();
@@ -77,49 +78,41 @@ function callbackForm() {
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
 
-		if (form.querySelector('[name="name"]').value.trim() == "") {
-			alert('Не заполнено имя');
-			return false;
-		};
+		validate(form, 'name');
+		validate(form, 'phone');
+		validateEmail(form, 'email');
+		validateCaptcha(form);
 
-		if (form.querySelector('[name="phone"]').value.trim() == "") {
-			alert('Не заполнен телефон');
-			return false;
-		};
+		if (
+			validate(form, 'name') &&
+			validate(form, 'phone') &&
+			validateEmail(form, 'email') &&
+			validateCaptcha(form)
+		) {
+			const formData = new FormData(form);
 
-		if (form.querySelector('[name="email"]').value.trim() == "") {
-			alert('Не заполнен email');
-			return false;
-		};
+			fetch('./../php/mail.php', {
+				method: 'POST',
+				body: formData
+			}).then(response => {
+				response.text().then(responseText => {
+					form.classList.add('none')
+					answer.innerText = responseText;
+					const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
 
-		if (!grecaptcha.getResponse()) {
-			alert('Вы не заполнили поле Я не робот!');
-			return false;
-		};
+					if (closeBtn) {
+						closeBtn.classList.remove('none');
 
-		const formData = new FormData(form);
-
-		fetch('./../php/mail.php', {
-			method: 'POST',
-			body: formData
-		}).then(response => {
-			response.text().then(responseText => {
-				form.classList.add('none')
-				answer.innerText = responseText;
-				const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
-
-				if (closeBtn) {
-					closeBtn.classList.remove('none');
-
-					closeBtn.addEventListener('click', function (event) {
-						form.classList.remove('none');
-						answer.innerText = "";
-						grecaptcha.reset();
-						closeBtn.classList.add('none');
-					});
-				};
+						closeBtn.addEventListener('click', function (event) {
+							form.classList.remove('none');
+							answer.innerText = "";
+							grecaptcha.reset();
+							closeBtn.classList.add('none');
+						});
+					};
+				});
 			});
-		});
+		};
 	});
 };
 

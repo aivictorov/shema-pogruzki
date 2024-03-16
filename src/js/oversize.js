@@ -11,8 +11,12 @@ export function oversizeForm() {
 
     addBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        const coordY = parseInt(document.querySelector('#coord-Y').value);
-        const coordX = parseInt(document.querySelector('#coord-X').value);
+
+        let coordY = document.querySelector('#coord-Y').value;
+        let coordX = document.querySelector('#coord-X').value;
+
+        if (coordY) coordY = parseInt(coordY);
+        if (coordX) coordX = parseInt(coordX);
 
         if (checkY(coordY) && checkX(coordX)) {
             points.push({
@@ -21,88 +25,90 @@ export function oversizeForm() {
                 zone: "",
                 index: ""
             });
+
+            points.forEach((point) => {
+                let sizeX
+
+                sizeX = check(point["Y"], loadingSize)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 0
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize1)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 1
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize2)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 2
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize3)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 3
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize4)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 4
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize5)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 5
+                    return
+                }
+
+                sizeX = check(point["Y"], oversize6)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 6
+                    return
+                }
+
+                sizeX = check(point["Y"], constructionSize)
+                if (point["X"] <= sizeX) {
+                    point['index'] = 8
+                    return
+                }
+
+                point['index'] = "–";
+            });
+
+            points.forEach((point) => {
+                if (point["Y"] >= 480 && point["Y"] < 1400) point["zone"] = "нижняя";
+                if (point["Y"] >= 1400 && point["Y"] < 4000) point["zone"] = "боковая";
+                if (point["Y"] >= 4000 && point["Y"] <= 5300) point["zone"] = "верхняя";
+            })
+
+            points.forEach((point) => {
+                if (point["zone"] === "нижняя" && point["index"] > indexArr[0]) {
+                    indexArr[0] = point["index"];
+                }
+
+                if (point["zone"] === "боковая" && point["index"] > indexArr[1]) {
+                    indexArr[1] = point["index"];
+                }
+
+                if (point["zone"] === "верхняя" && point["index"] > indexArr[2]) {
+                    indexArr[2] = point["index"];
+                }
+                if (point["index"] === "–") {
+                    indexArr[4] = true;
+                }
+            });
+
+            render(points, pointsField);
+            renderIndex(indexArr, resultField)
+
         } else {
-            alert('error')
+            alert('Ошибка! Введены некорректные данные.')
         }
-
-        points.forEach((point) => {
-            let sizeX
-
-            sizeX = check(point["Y"], loadingSize)
-            if (point["X"] <= sizeX) {
-                point['index'] = 0
-                return
-            }
-
-            sizeX = check(point["Y"], oversize1)
-            if (point["X"] <= sizeX) {
-                point['index'] = 1
-                return
-            }
-
-            sizeX = check(point["Y"], oversize2)
-            if (point["X"] <= sizeX) {
-                point['index'] = 2
-                return
-            }
-
-            sizeX = check(point["Y"], oversize3)
-            if (point["X"] <= sizeX) {
-                point['index'] = 3
-                return
-            }
-
-            sizeX = check(point["Y"], oversize4)
-            if (point["X"] <= sizeX) {
-                point['index'] = 4
-                return
-            }
-
-            sizeX = check(point["Y"], oversize5)
-            if (point["X"] <= sizeX) {
-                point['index'] = 5
-                return
-            }
-
-            sizeX = check(point["Y"], oversize6)
-            if (point["X"] <= sizeX) {
-                point['index'] = 6
-                return
-            }
-
-            sizeX = check(point["Y"], constructionSize)
-            if (point["X"] <= sizeX) {
-                point['index'] = 8
-                return
-            }
-
-            point['index'] = "–";
-        });
-
-        points.forEach((point) => {
-            if (point["Y"] >= 480 && point["Y"] < 1400) point["zone"] = "нижняя";
-            if (point["Y"] >= 1400 && point["Y"] < 4000) point["zone"] = "боковая";
-            if (point["Y"] >= 4000 && point["Y"] <= 5300) point["zone"] = "верхняя";
-        })
-
-        points.forEach((point) => {
-            if (point["zone"] === "нижняя" && point["index"] > indexArr[0]) {
-                indexArr[0] = point["index"];
-            }
-
-            if (point["zone"] === "боковая" && point["index"] > indexArr[1]) {
-                indexArr[1] = point["index"];
-            }
-
-            if (point["zone"] === "верхняя" && point["index"] > indexArr[2]) {
-                indexArr[2] = point["index"];
-            }
-            if (point["index"] === "–") {
-                indexArr[4] = true;
-            }
-        })
-        render(points, pointsField);
-        renderIndex(indexArr, resultField)
     });
 
     resetBtn.addEventListener('click', (event) => {
@@ -175,7 +181,7 @@ function checkY(y) {
     return true;
 }
 
-function checkX(x) { 
+function checkX(x) {
     if (x < 1 || x > 3000) return false
     return true;
 }

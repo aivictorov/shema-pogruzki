@@ -8,7 +8,7 @@
                 <label class="input__label">
                     <span class="input__name">Наименование организации</span>
                     <input class="input__field" type="text" placeholder="Наименование организации" name="company"
-                        autocomplete="company" required>
+                        autocomplete="company">
                 </label>
                 <span class="input__notify"></span>
             </div>
@@ -19,8 +19,7 @@
             <div class="input">
                 <label class="input__label">
                     <span class="input__name">Контактное лицо</span>
-                    <input class="input__field" type="text" placeholder="Ваше имя" name="name" autocomplete="name"
-                        required>
+                    <input class="input__field" type="text" placeholder="Ваше имя" name="name" autocomplete="name">
                 </label>
                 <span class="input__notify"></span>
             </div>
@@ -31,8 +30,7 @@
             <div class="input">
                 <label class="input__label">
                     <span class="input__name">Телефон</span>
-                    <input class="input__field" type="text" placeholder="Ваш телефон" name="phone" autocomplete="phone"
-                        required>
+                    <input class="input__field" type="text" placeholder="Ваш телефон" name="phone" autocomplete="phone">
                 </label>
                 <span class="input__notify"></span>
             </div>
@@ -43,8 +41,7 @@
             <div class="input">
                 <label class="input__label">
                     <span class="input__name">Электронная почта</span>
-                    <input class="input__field" type="text" placeholder="Адрес электронной почты" name="email"
-                        autocomplete="email" required>
+                    <input class="input__field" type="text" placeholder="Адрес электронной почты" name="email" autocomplete="email">
                 </label>
                 <span class="input__notify"></span>
             </div>
@@ -84,14 +81,16 @@
         </div>
     </div>
     <div class="form__row">
-        <div class="form__item form__item--capatcha">
-            <div class="g-recaptcha" data-sitekey="6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs"></div>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <div class="form__item">
+            <div class="captcha">
+                <div class="g-recaptcha" data-sitekey="6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs"></div>
+                <span class="input__notify"></span>
+            </div>
         </div>
     </div>
     <div class="form__row">
         <div class="form__item">
-            <button class="btn btn--red" type="submit">Заказать</button>
+            <button class="btn btn--red" type="submit">Отправить</button>
         </div>
     </div>
     <div class="form__row">

@@ -88,6 +88,11 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./dist/js/'));
 });
 
+// gulp.task('js', function () {
+//     return gulp.src('./src/js/*.js')
+//         .pipe(gulp.dest('./dist/js/'));
+// });
+
 gulp.task('libs', function () {
     return gulp.src('./src/libs/**/*')
         .pipe(gulp.dest('./dist/libs/'));
