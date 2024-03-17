@@ -26,6 +26,10 @@ body {
 	&.no-scroll {
 		overflow-y: hidden;
 		padding-right: 17px;
+
+		@include bp(1210px) {
+			padding-right: 0px;
+		}
 	}
 }
 
@@ -42,6 +46,21 @@ body>* {
 	margin: 0 auto;
 	padding: 0 25px;
 	position: relative;
+
+	@include bp(1210px) {
+		max-width: 960px;
+		padding: 0 20px;
+	}
+
+	@include bp(960px) {
+		max-width: 768px;
+		padding: 0 20px;
+	}
+
+	@include bp(768px) {
+		max-width: 320px;
+		padding: 0 15px;
+	}
 }
 
 .img {

@@ -29,6 +29,12 @@
 	min-height: 55px;
 	flex: 2;
 
+	&--info {
+		@include bp(960px) {
+			display: none;
+		}
+	}
+
 	&:first-child {
 		flex: 3;
 		justify-content: flex-start;
@@ -62,4 +68,25 @@
 	align-items: center;
 	padding: 0 10px;
 	min-height: 84px;
+
+	&--menu {
+		@include bp(960px) {
+			position: fixed;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: #fff;
+			padding: 140px 0 0;
+			display: block;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(50px);
+			transition: 0.5s ease;
+		}
+	}
+
+	&--btn {
+		display: none;
+	}
 }

@@ -3,6 +3,16 @@
     padding: 0;
     margin: 0 -24px;
     height: 100%;
+
+    @include bp(960px) {
+        display: block;
+        margin: 0;
+        border-top: 1px solid #E2E8EB;
+        text-align: center;
+        padding: 24px 0;
+        height: 100%;
+        overflow-y: auto;     
+    }
 }
 
 .menu__item {

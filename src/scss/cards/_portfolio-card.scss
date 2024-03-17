@@ -1,6 +1,10 @@
 .portfolio-card-wrapper {
 	padding: 10px;
 	width: 50%;
+
+	@include bp(960px) {
+		width: 100%;
+	}
 }
 
 .portfolio-card {

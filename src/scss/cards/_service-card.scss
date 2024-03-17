@@ -1,6 +1,10 @@
 .service-card-wrapper {
 	padding: 5px;
 	width: 50%;
+
+	@include bp(960px) {
+		width: 100%;
+	}
 }
 
 .service-card {
