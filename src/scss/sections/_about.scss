@@ -1,16 +1,21 @@
 .about {
 	padding-top: 74px;
 	padding-bottom: 60px;
+
+	@include bp(768px) {
+		padding-top: 48px;
+		padding-bottom: 16px;	
+	}
 }
 
 .about__block {
 	display: flex;
 	justify-content: space-between;
+	column-gap: 20px;
 	margin-bottom: 55px
 }
 
 .about__text {
-	padding-right: 20px;
 	max-width: 760px;
 
 	h3 {
@@ -21,6 +26,11 @@
 		margin-bottom: 32px;
 		font-size: 18px;
 		line-height: 1.67;
+
+		@include bp(768px) {
+			margin-bottom: 15px;
+			font-size: 11px;
+		}
 	}
 }
 
@@ -37,4 +47,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: -5px;
+
+	@include bp(768px) {
+		margin: 0 -15px;
+		border-top: 1px solid #DDE4E7;
+	}
 }

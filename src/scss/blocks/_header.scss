@@ -61,6 +61,10 @@
 	font-size: 15px;
 	line-height: 1.4;
 	font-weight: 400;
+
+	@include bp(768px) {
+		font-size: 12px;
+	}
 }
 
 .header-bottom__item {
@@ -69,24 +73,36 @@
 	padding: 0 10px;
 	min-height: 84px;
 
+	@include bp(768px) {
+		min-height: 56px;
+	}
+
 	&--menu {
 		@include bp(960px) {
 			position: fixed;
-			height: 100vh;
+			background: #fff;
+			// height: 100vh;
 			top: 0;
 			left: 0;
 			right: 0;
-			background: #fff;
 			padding: 140px 0 0;
-			display: block;
-			opacity: 0;
-			visibility: hidden;
-			transform: translateY(50px);
-			transition: 0.5s ease;
+			// display: block;
+			// opacity: 1;
+			// visibility: hidden;
+			// transform: translateY(50px);
+			// transition: 0.5s ease;
+			z-index: 1;
+			display: none;
 		}
 	}
 
+	&--menu-active {
+		display: block;
+	}
+
 	&--btn {
-		display: none;
+		@include bp(960px) {
+			display: none;
+		}
 	}
 }

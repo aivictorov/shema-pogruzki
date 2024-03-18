@@ -3,6 +3,12 @@ https://www.youtube.com/watch?v=d2ngzLOM01U
 
 ----------------------------------------------------------------------
 
+GIT:
+git config --global user.email "aivictorov@yandex.ru"
+git config --global user.name " aivictorov"
+
+----------------------------------------------------------------------
+
 Команда для установки всех пакетов:
 npm i gulp gulp-sass sass gulp-file-include gulp-clean gulp-server-livereload gulp-sourcemaps gulp-plumber gulp-notify gulp-group-css-media-queries --save-dev
 

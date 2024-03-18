@@ -14,6 +14,12 @@
     cursor: pointer;
     width: 100%;
 
+    @include bp(768px) {
+        height: 32px;
+        padding: 0 13px;
+        font-size: 13px;
+    }
+
     &--red {
         border: 1px solid #C20D19;
         color: #fff;

@@ -13,6 +13,10 @@ a.link {
         color: #C20D19;
         font-weight: 700;
 
+        @include bp(768px) {
+            font-size: 12px;
+        }
+
         .link__icon {
             margin-left: 13px;
         }

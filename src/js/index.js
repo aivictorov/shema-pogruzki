@@ -7,7 +7,26 @@ window.addEventListener('DOMContentLoaded', () => {
 	oversizeForm();
 	callbackForm();
 	inputFile();
+	mobileNav();
 });
+
+function mobileNav() {
+	const nav = document.querySelector('.header-bottom__item--menu');
+	const navIcon = document.querySelector('.nav-icon');
+	const navLinks = document.querySelectorAll('.nav a');
+
+	navIcon.addEventListener('click', function () {
+		this.classList.toggle('nav-icon--active');
+		nav.classList.toggle('header-bottom__item--menu-active');
+	});
+
+	navLinks.forEach((navLink) => {
+		navLink.addEventListener('click', function () {
+			nav.classList.remove('nav--active');
+			navIcon.classList.remove('header-bottom__item--menu-active');
+		});
+	});
+};
 
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');

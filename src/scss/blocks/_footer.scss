@@ -6,6 +6,11 @@
 .footer__row {
     display: flex;
     justify-content: space-between;
+    
+    @include bp(768px) {
+        flex-direction: column;
+        row-gap: 10px;
+    }
 }
 
 .footer__item {
@@ -16,6 +21,10 @@
 
     &--right {
         align-items: flex-end;
+
+        @include bp(768px) {
+            align-items: flex-start;
+        }  
     }
 }
 

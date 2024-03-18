@@ -1,6 +1,11 @@
 .articles {
 	padding-top: 70px;
 	padding-bottom: 40px;
+
+	@include bp(768px) {
+		padding-top: 48px;
+		padding-bottom: 16px;	
+	}
 }
 
 .articles__row {

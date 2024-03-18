@@ -69,3 +69,15 @@ body>* {
 	height: 100%;
 	object-fit: cover;
 }
+
+// section {
+// 	padding-top: 70px;
+// 	padding-bottom: 40px;
+// }
+
+.section-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px
+}

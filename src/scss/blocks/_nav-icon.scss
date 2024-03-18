@@ -1,0 +1,73 @@
+$line-width: 24px;
+$line-height: 2px;
+$color: #C20D19;
+
+$width: $line-width;
+$height: $line-height * 8;
+
+.nav-icon {
+	width: $width;
+	height: $height;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	@include bp(960px) {
+		display: flex;
+		position: relative;
+		z-index: 1000;
+	}
+}
+
+.nav-icon__middle {
+	position: relative;
+	width: $line-width;
+	height: $line-height;
+	background-color: $color;
+	transition: background-color 0s linear .2s;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: $line-width;
+		height: $line-height;
+		background-color: $color;
+		transition: transform .2s ease-in, top .2s linear .2s;
+	}
+
+	&::before {
+		top: -($line-height * 3.5);
+	}
+
+	&::after {
+		top: $line-height * 3.5;
+	}
+}
+
+.nav-icon.nav-icon--active {
+	position: fixed;
+	top: 41px;
+	right: 15px;	
+}
+
+.nav-icon.nav-icon--active .nav-icon__middle {
+	background-color: transparent;
+
+	&::before,
+	&::after {
+		top: 0;
+		background-color: #000;
+		transition: top .2s linear, transform .2s ease-in .2s;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+}
