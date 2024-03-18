@@ -16,7 +16,7 @@ $height: $line-height * 8;
 	@include bp(960px) {
 		display: flex;
 		position: relative;
-		z-index: 1000;
+		z-index: 100;
 	}
 }
 

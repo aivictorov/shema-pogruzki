@@ -84,3 +84,10 @@ npm install --save-dev gulp-changed
 web-p
 
 npm i gulp-webp gulp-webp-html gulp-webp-css --save-dev
+
+----------------------------------------------------------------------
+
+Плагины для Nunjucks:
+
+Nunjucks – добавляет подсветку синтаксиса Nunjucks и сниппеты.
+Nunjucks Template Formatter – форматирует шаблоны Nunjucks.

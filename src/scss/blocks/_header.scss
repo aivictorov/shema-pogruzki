@@ -70,8 +70,10 @@
 .header-bottom__item {
 	display: flex;
 	align-items: center;
-	padding: 0 10px;
+	// padding: 0 10px;
 	min-height: 84px;
+
+
 
 	@include bp(768px) {
 		min-height: 56px;
@@ -91,7 +93,7 @@
 			// visibility: hidden;
 			// transform: translateY(50px);
 			// transition: 0.5s ease;
-			z-index: 1;
+			z-index: 5;
 			display: none;
 		}
 	}

@@ -51,6 +51,12 @@ function modalWindows() {
 				document.querySelectorAll('[modal-window]').forEach((window) => {
 					window.classList.remove('active');
 				});
+
+				const nav = document.querySelector('.header-bottom__item--menu');
+				const navIcon = document.querySelector('.nav-icon');
+				navIcon.classList.remove('nav-icon--active');
+				nav.classList.remove('header-bottom__item--menu-active');
+
 				modal.classList.add('active');
 				document.body.classList.add('no-scroll');
 				modal.scrollTo(0, 0);

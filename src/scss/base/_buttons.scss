@@ -30,6 +30,11 @@
         height: 54px;
         border: 1px solid #FFE1A6;
         background-color: #FFE1A6;
+
+        @include bp(768px) {
+            height: 38px;
+            width: 200px;
+        }
     }
 
     &--border {

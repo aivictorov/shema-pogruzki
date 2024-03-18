@@ -48,17 +48,17 @@ body>* {
 	position: relative;
 
 	@include bp(1210px) {
-		max-width: 960px;
+		// max-width: 960px;
 		padding: 0 20px;
 	}
 
 	@include bp(960px) {
-		max-width: 768px;
+		// max-width: 768px;
 		padding: 0 20px;
 	}
 
 	@include bp(768px) {
-		max-width: 320px;
+		// max-width: 320px;
 		padding: 0 15px;
 	}
 }
