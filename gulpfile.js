@@ -108,6 +108,11 @@ gulp.task('php', function () {
         .pipe(gulp.dest('./dist/php/'));
 });
 
+gulp.task('htaccess', function () {
+    return gulp.src('./src/.htaccess')
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('server', function () {
     return gulp.src('./dist/')
         .pipe(server(serverSettings));
@@ -116,18 +121,18 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
     gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass'));
     gulp.watch('./src/html/**/*.html', gulp.parallel('html'));
-    gulp.watch('./src/data/**/*.json', gulp.parallel('html'));
     gulp.watch('./src/img/**/*', gulp.parallel('images'));
     gulp.watch('./src/fonts/**/*', gulp.parallel('fonts'));
-    gulp.watch('./src/files/**/*', gulp.parallel('files'));
-    gulp.watch('./src/php/**/*', gulp.parallel('php'));
     gulp.watch('./src/js/*.js', gulp.parallel('js'));
+    gulp.watch('./src/php/**/*', gulp.parallel('php'));
+    gulp.watch('./src/libs/**/*', gulp.parallel('libs'));
+    gulp.watch('./src/files/**/*', gulp.parallel('files'));
 });
 
 // Default task
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'libs', 'files', 'php'),
+    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'php', 'libs', 'files', 'htaccess'),
     gulp.parallel('server', 'watch')
 ));
