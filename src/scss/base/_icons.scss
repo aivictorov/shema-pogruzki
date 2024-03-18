@@ -12,10 +12,16 @@
         height: 12px;
     }
 
-    &--close,
+    &--close {
+        width: 30px;
+        height: 30px;
+        stroke: #000;
+    }
+
     &--close-light {
         width: 30px;
         height: 30px;
+        stroke: #FFF;
     }
 
     &--logo {
@@ -34,7 +40,7 @@
 
         @include bp(768px) {
             width: 16px;
-            height: 12px; 
+            height: 12px;
         }
     }
 
@@ -44,7 +50,7 @@
 
         @include bp(768px) {
             width: 12px;
-            height: 12px; 
+            height: 12px;
         }
     }
 

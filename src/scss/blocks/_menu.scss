@@ -1,17 +1,29 @@
 .menu {
     display: flex;
     padding: 0;
-    margin: 0 -24px;
     height: 100%;
 
     @include bp(960px) {
-        display: block;
-        margin: 0;
-        text-align: center;
+        display: none;
+        position: fixed;
+        background: $white;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 140px;
         padding: 24px 0;
+        border-top: 1px solid #E2E8EB;
         height: 100%;
-        overflow-y: auto;     
-        width: 100%;
+        overflow-y: auto;
+    }
+
+    @include bp(768px) {
+        margin-top: 92px;
+    }
+
+    &--active {
+        display: block;
     }
 }
 
@@ -19,21 +31,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 18px 10px 30px;
-    height: 100%;
 
-    &--mobile-btn{
+    &--btn {
         display: none;
 
         @include bp(960px) {
-            display: flex;
+            display: block;
+            margin-top: 10px;
+            width: 200px;
+            margin: 10px auto 0;
         }
     }
 }
 
 .menu__link {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    height: 100%;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    white-space: nowrap;
+
+    @include bp(1210px) {
+        padding: 10px 18px;
+    }
+
+    &:hover {
+        color: $red;
+    }
 }

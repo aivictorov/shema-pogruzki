@@ -49,7 +49,7 @@
 }
 
 .about-card__data {
-	color: #C20D19;
+	color: $red;
 	padding-right: 54px;
 
 	@include bp(768px) {

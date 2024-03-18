@@ -1,10 +1,12 @@
 .portfolio {
 	padding-top: 70px;
 	padding-bottom: 40px;
-	
+	scroll-margin-top: 140px;
+
 	@include bp(768px) {
 		padding-top: 48px;
-		padding-bottom: 16px;	
+		padding-bottom: 16px;
+		scroll-margin-top: 92px;
 	}
 }
 

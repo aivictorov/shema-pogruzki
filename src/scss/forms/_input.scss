@@ -36,7 +36,7 @@
     }
 
     &--error {
-        border: 1px solid #C20D19;
+        border: 1px solid $red;
     }
 
     &.textarea {
@@ -58,7 +58,7 @@
 .input__notify {
     font-size: 12px;
     line-height: 1.21;
-    color: #C20D19;
+    color: $red;
     text-align: left;
 }
 

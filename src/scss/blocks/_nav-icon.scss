@@ -1,23 +1,18 @@
 $line-width: 24px;
 $line-height: 2px;
-$color: #C20D19;
+$color: $red;
 
 $width: $line-width;
 $height: $line-height * 8;
 
 .nav-icon {
+	position: relative;
 	width: $width;
 	height: $height;
-	display: none;
 	justify-content: center;
 	align-items: center;
+	z-index: 100;
 	cursor: pointer;
-
-	@include bp(960px) {
-		display: flex;
-		position: relative;
-		z-index: 100;
-	}
 }
 
 .nav-icon__middle {
@@ -47,11 +42,7 @@ $height: $line-height * 8;
 	}
 }
 
-.nav-icon.nav-icon--active {
-	position: fixed;
-	top: 41px;
-	right: 15px;	
-}
+// .nav-icon.nav-icon--active {}
 
 .nav-icon.nav-icon--active .nav-icon__middle {
 	background-color: transparent;
@@ -59,7 +50,7 @@ $height: $line-height * 8;
 	&::before,
 	&::after {
 		top: 0;
-		background-color: #000;
+		// background-color: #000;
 		transition: top .2s linear, transform .2s ease-in .2s;
 	}
 

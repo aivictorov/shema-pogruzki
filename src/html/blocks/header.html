@@ -1,14 +1,14 @@
 <header class="header">
     <div class="header-top">
         <div class="container">
-            <div class="header-top__row">
-                <div class="header-top__item header-top__item--info">
-                    <div class="header-top__info">
-                        Работаем по всем железным дорогам РФ и СНГ
-                    </div>
+            <div class="header__row">
+
+                <div class="header__info">
+                    Работаем по всем железным дорогам РФ и СНГ
                 </div>
-                <div class="header-top__item">
-                    <a class="link link--icon header-top__link" href="tel:+79219512991">
+
+                <div class="header__phone">
+                    <a class="link link--icon header__link" href="tel:+79219512991">
                         <span class="link__icon">
                             <svg class="icon icon--phone">
                                 <use xlink:href="./img/icons/sprite.svg#phone"></use>
@@ -17,8 +17,9 @@
                         <span class="link__text">+7 921 951 29 91</span>
                     </a>
                 </div>
-                <div class="header-top__item">
-                    <a class="link link--icon header-top__link" href="mailto:shema-pogruzki@yandex.ru">
+
+                <div class="header__email">
+                    <a class="link link--icon" href="mailto:shema-pogruzki@yandex.ru">
                         <span class="link__icon">
                             <svg class="icon icon--mail">
                                 <use xlink:href="./img/icons/sprite.svg#mail"></use>
@@ -27,31 +28,26 @@
                         <span class="link__text">shema-pogruzki@yandex.ru</span>
                     </a>
                 </div>
+
             </div>
         </div>
     </div>
 
     <div class="header-bottom">
         <div class="container">
-            <div class="header-bottom__row">
-                <div class="header-bottom__item">
-                    {% include './../blocks/logo.html' %}
-                </div>
-                <div class="header-bottom__item header-bottom__item--menu">
-                    {% include './../blocks/menu.html' %}
-                </div>
-                <div class="header-bottom__item">
-                    <div class="header-bottom__item header-bottom__item--btn">
-                        <button class="btn btn--yellow" type="button" modal-button="oversize">Расчет негабаритности</button>
+            <div class="header__row">
+                {% include './../blocks/logo.html' %}
+                {% include './../blocks/menu.html' %}
+                <div class="header__right">
+                    <button class="btn btn--yellow header__btn" type="button" modal-button="oversize">
+                        Расчет негабаритности
+                    </button>
+                    <div class="header__nav-icon nav-icon">
+                        <div class="nav-icon__middle"></div>
                     </div>
-                    <div class="header-bottom__item">
-                        <div class="nav-icon">
-                            <div class="nav-icon__middle"></div>
-                        </div>
-                    </div>
-    
                 </div>
             </div>
+
         </div>
     </div>
 </header>

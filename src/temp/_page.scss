@@ -61,7 +61,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #C20D19;
+            background: $red;
             content: '';
             position: absolute;
             top: 24px;
@@ -78,6 +78,6 @@
     }
 
     a {
-        color: #C20D19;
+        color: $red;
     }
 }

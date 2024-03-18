@@ -2,6 +2,8 @@ a.logo {
     display: block;
     overflow: hidden;
     height: 50px;
+    position: relative;
+    z-index: 2;
 
     @include bp(768px) {
         height: 30px;

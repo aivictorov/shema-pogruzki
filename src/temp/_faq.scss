@@ -1,5 +1,5 @@
 .instruction {
-    background-color: #fff;
+    background-color: $white;
     width: 100%;
     border-top: 1px solid #DDE4E7;
 }
@@ -21,7 +21,7 @@
 
 .instruction svg {
     // fill: transparent;
-    stroke: #C20D19;
+    stroke: $red;
     stroke-width: 3px;
     flex: 0 0 20px;
     width: 17px;

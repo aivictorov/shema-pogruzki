@@ -26,13 +26,7 @@
 			d="M27.81 12.86L16.005 24.665 14.19 22.85a4.447 4.447 0 0 0-6.288 6.288l4.959 4.96a4.447 4.447 0 0 0 6.288 0l14.95-14.95a4.447 4.447 0 0 0-6.29-6.288z" />
 	</symbol>
 	<symbol id="close" viewBox="0 0 24 24">
-		<g stroke-width="3" stroke="#000" transform="translate(1.000000, 1.000000)">
-			<path d="M0,11 L22,11"></path>
-			<path d="M11,0 L11,22"></path>
-		</g>
-	</symbol>
-	<symbol id="close-light" viewBox="0 0 24 24">
-		<g stroke-width="3" stroke="#FFF" transform="translate(1.000000, 1.000000)">
+		<g stroke-width="3" transform="translate(1.000000, 1.000000)">
 			<path d="M0,11 L22,11"></path>
 			<path d="M11,0 L11,22"></path>
 		</g>

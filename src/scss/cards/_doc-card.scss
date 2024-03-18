@@ -20,7 +20,7 @@
 	padding: 22px 22px;
 	height: 100%;
 	border: 1px solid #E2E8EB;
-	background: #fff;
+	background: $white;
 }
 
 .doc-card__icon {
@@ -46,7 +46,7 @@
 	font-size: 12px;
 	font-weight: 700;
 	line-height: 1.08;
-	color: #C20D19;
+	color: $red;
 }
 
 .doc-card__format {

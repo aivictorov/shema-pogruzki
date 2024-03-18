@@ -80,18 +80,18 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('./dist/fonts/'));
 });
 
-gulp.task('js', function () {
-    return gulp.src('./src/js/*.js')
-        .pipe(plumber(plumberSettings('JS')))
-        .pipe(babel())
-        .pipe(webpack(require('./webpack.config')))
-        .pipe(gulp.dest('./dist/js/'));
-});
-
 // gulp.task('js', function () {
 //     return gulp.src('./src/js/*.js')
+//         .pipe(plumber(plumberSettings('JS')))
+//         .pipe(babel())
+//         .pipe(webpack(require('./webpack.config')))
 //         .pipe(gulp.dest('./dist/js/'));
 // });
+
+gulp.task('js', function () {
+    return gulp.src('./src/js/*.js')
+        .pipe(gulp.dest('./dist/js/'));
+});
 
 gulp.task('libs', function () {
     return gulp.src('./src/libs/**/*')

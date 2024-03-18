@@ -58,7 +58,7 @@ $height: $line-height * 5;
 	&::before,
 	&::after {
 		top: 0;
-		background-color: #fff;
+		background-color: $white;
 		transition: top .2s linear, transform .2s ease-in .2s;
 	}
 

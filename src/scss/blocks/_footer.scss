@@ -6,8 +6,8 @@
 .footer__row {
     display: flex;
     justify-content: space-between;
-    
-    @include bp(768px) {
+
+    @include bp(500px) {
         flex-direction: column;
         row-gap: 10px;
     }
@@ -22,17 +22,22 @@
     &--right {
         align-items: flex-end;
 
-        @include bp(768px) {
+        @include bp(500px) {
             align-items: flex-start;
-        }  
+        }
     }
 }
 
+.footer__name,
 .footer__phone,
-.footer__name {
+.footer__phone a.link {
     font-size: 15px;
     line-height: 1.2;
     font-weight: 700;
+
+    @include bp(768px) {
+        font-size: 13px;
+    }
 }
 
 .footer__adress,
@@ -41,4 +46,8 @@
     font-size: 13px;
     line-height: 1.5;
     font-weight: 500;
+
+    @include bp(768px) {
+        font-size: 11px;
+    }
 }

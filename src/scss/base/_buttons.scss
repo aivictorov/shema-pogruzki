@@ -15,15 +15,15 @@
     width: 100%;
 
     @include bp(768px) {
-        height: 32px;
         padding: 0 13px;
+        height: 32px;
         font-size: 13px;
     }
 
     &--red {
-        border: 1px solid #C20D19;
-        color: #fff;
-        background-color: #C20D19;
+        border: 1px solid $red;
+        color: $white;
+        background-color: $red;
     }
 
     &--yellow {
@@ -33,7 +33,6 @@
 
         @include bp(768px) {
             height: 38px;
-            width: 200px;
         }
     }
 

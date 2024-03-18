@@ -11,19 +11,21 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function mobileNav() {
-	const nav = document.querySelector('.header-bottom__item--menu');
+	const nav = document.querySelector('.menu');
 	const navIcon = document.querySelector('.nav-icon');
-	const navLinks = document.querySelectorAll('.nav a');
+	const navLinks = document.querySelectorAll('.menu .menu__item a');
+	
+	console.log(navLinks)
 
 	navIcon.addEventListener('click', function () {
-		this.classList.toggle('nav-icon--active');
-		nav.classList.toggle('header-bottom__item--menu-active');
+		navIcon.classList.toggle('nav-icon--active');
+		nav.classList.toggle('menu--active');
 	});
 
 	navLinks.forEach((navLink) => {
 		navLink.addEventListener('click', function () {
-			nav.classList.remove('nav--active');
-			navIcon.classList.remove('header-bottom__item--menu-active');
+			navIcon.classList.remove('nav-icon--active');
+			nav.classList.remove('menu--active');
 		});
 	});
 };
@@ -52,10 +54,10 @@ function modalWindows() {
 					window.classList.remove('active');
 				});
 
-				const nav = document.querySelector('.header-bottom__item--menu');
+				const nav = document.querySelector('.menu');
 				const navIcon = document.querySelector('.nav-icon');
 				navIcon.classList.remove('nav-icon--active');
-				nav.classList.remove('header-bottom__item--menu-active');
+				nav.classList.remove('menu--active');
 
 				modal.classList.add('active');
 				document.body.classList.add('no-scroll');
