@@ -26,6 +26,9 @@ export function oversizeForm() {
                 index: ""
             });
 
+            document.querySelector('#coord-Y').value = "";
+            document.querySelector('#coord-X').value = "";
+
             points.forEach((point) => {
                 let sizeX
 
@@ -113,6 +116,9 @@ export function oversizeForm() {
 
     resetBtn.addEventListener('click', (event) => {
         event.preventDefault();
+        
+        document.querySelector('#coord-Y').value = "";
+        document.querySelector('#coord-X').value = "";
 
         points.splice(0, points.length)
         render(points, pointsField);
