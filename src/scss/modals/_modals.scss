@@ -37,8 +37,8 @@
 
 		@include bp(595px) {
 			left: 0;
-			top: 50%;
-			transform: translate(0, -50%);
+			top: 0;
+			transform: translate(0, 0);
 		}
 	}
 
