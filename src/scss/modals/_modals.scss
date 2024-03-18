@@ -34,6 +34,12 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+
+		@include bp(595px) {
+			left: 0;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
 	}
 
 	&--right {

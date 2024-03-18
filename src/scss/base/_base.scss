@@ -15,13 +15,16 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 1.67;
+	text-rendering: optimizeSpeed;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 
-	// text-rendering: optimizeSpeed;
-	// text-rendering: optimizeLegibility;
-	// -webkit-font-smoothing: antialiased;
-	// -ms-text-size-adjust: 100%;
-	// -moz-text-size-adjust: 100%;
-	// -webkit-text-size-adjust: 100%;
+	@include bp(768px) {
+		font-size: 12px;
+	}
 
 	&.no-scroll {
 		overflow-y: hidden;
@@ -47,19 +50,9 @@ body>* {
 	padding: 0 25px;
 	position: relative;
 
-	@include bp(1210px) {
-		// max-width: 960px;
-		padding: 0 20px;
-	}
-
 	@include bp(960px) {
 		// max-width: 768px;
 		padding: 0 20px;
-	}
-
-	@include bp(768px) {
-		// max-width: 320px;
-		padding: 0 15px;
 	}
 }
 

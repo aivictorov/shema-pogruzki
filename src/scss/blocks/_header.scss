@@ -58,6 +58,10 @@
 	@include bp(960px) {
 		justify-content: flex-start;
 	}
+
+	@include bp(450px) {
+		flex: 1.5;
+	}
 }
 
 .header__email {

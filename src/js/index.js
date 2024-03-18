@@ -89,7 +89,7 @@ function modalWindows() {
 	function alignModalWindows() {
 		document.querySelectorAll('div[modal-window]').forEach((modal) => {
 			const content = modal.querySelector('.modal__content');
-			if (content.clientHeight >= window.innerHeight - 80) {
+			if (content.clientHeight >= window.innerHeight - 100) {
 				content.classList.remove('modal__content--center');
 			} else {
 				content.classList.add('modal__content--center');
