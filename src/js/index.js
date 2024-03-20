@@ -14,7 +14,7 @@ function mobileNav() {
 	const nav = document.querySelector('.menu');
 	const navIcon = document.querySelector('.nav-icon');
 	const navLinks = document.querySelectorAll('.menu .menu__item a');
-	
+
 	navIcon.addEventListener('click', function () {
 		navIcon.classList.toggle('nav-icon--active');
 		nav.classList.toggle('menu--active');
@@ -46,19 +46,20 @@ function modalWindows() {
 		if (modal) {
 			const content = modal.querySelector('.modal__content');
 			const closeBtn = modal.querySelector(`[close-modal-button="${button.getAttribute('modal-button')}"]`);
+			const nav = document.querySelector('.menu');
+			const navIcon = document.querySelector('.nav-icon');
+			const header = document.querySelector('.header');
+
 
 			button.addEventListener('click', () => {
 				document.querySelectorAll('[modal-window]').forEach((window) => {
 					window.classList.remove('active');
 				});
-
-				const nav = document.querySelector('.menu');
-				const navIcon = document.querySelector('.nav-icon');
 				navIcon.classList.remove('nav-icon--active');
 				nav.classList.remove('menu--active');
-
 				modal.classList.add('active');
-				document.body.classList.add('no-scroll');
+				document.body.classList.add('noscroll');
+				header.classList.add('noscroll');
 				modal.scrollTo(0, 0);
 			});
 
@@ -68,13 +69,15 @@ function modalWindows() {
 
 			modal.addEventListener('mousedown', () => {
 				modal.classList.remove('active');
-				document.body.classList.remove('no-scroll');
+				document.body.classList.remove('noscroll');
+				header.classList.remove('noscroll');
 			});
 
 			if (closeBtn) {
 				closeBtn.addEventListener('click', () => {
 					modal.classList.remove('active');
-					document.body.classList.remove('no-scroll');
+					document.body.classList.remove('noscroll');
+					header.classList.remove('noscroll');
 				});
 			};
 		};
