@@ -1,13 +1,37 @@
-https://www.youtube.com/watch?v=D_HW-tvyKKE
-https://www.youtube.com/watch?v=d2ngzLOM01U
+Плагины для VSCode: 
+
+Auto Close Tag
+Auto Complete Tag
+Auto Rename Tag
+Material Icon Theme
+eCSStractor for VSCode
+eCSStractor tsx for VSCode
+Live Server
+
+----------------------------------------------------------------------
+
+Плагины для Nunjucks:
+
+Nunjucks – добавляет подсветку синтаксиса Nunjucks и сниппеты.
+Nunjucks Template Formatter – форматирует шаблоны Nunjucks.
 
 ----------------------------------------------------------------------
 
 GIT:
 git config --global user.email "aivictorov@yandex.ru"
-git config --global user.name " aivictorov"
+git config --global user.name "aivictorov"
 
 ----------------------------------------------------------------------
+git config --global user.name "aivictorov"
+Глобальная установка Gulp-cli:
+npm install --global gulp-cli
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+----------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=D_HW-tvyKKE
+https://www.youtube.com/watch?v=d2ngzLOM01U
 
 Команда для установки всех пакетов:
 npm i gulp gulp-sass sass gulp-file-include gulp-clean gulp-server-livereload gulp-sourcemaps gulp-plumber gulp-notify gulp-group-css-media-queries --save-dev
@@ -23,13 +47,6 @@ gulp-sourcemaps - Исходные карты для CSS
 gulp-plumber - Фикс ошибок при сборке
 gulp-notify - Нотификации
 gulp-group-css-media-queries - Группировка CSS медиа запросов
-
-----------------------------------------------------------------------
-
-Глобальная установка:
-npm install --global gulp-cli
-
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ----------------------------------------------------------------------
 
@@ -87,7 +104,3 @@ npm i gulp-webp gulp-webp-html gulp-webp-css --save-dev
 
 ----------------------------------------------------------------------
 
-Плагины для Nunjucks:
-
-Nunjucks – добавляет подсветку синтаксиса Nunjucks и сниппеты.
-Nunjucks Template Formatter – форматирует шаблоны Nunjucks.
