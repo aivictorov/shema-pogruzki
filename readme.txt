@@ -22,7 +22,7 @@ git config --global user.email "aivictorov@yandex.ru"
 git config --global user.name "aivictorov"
 
 ----------------------------------------------------------------------
-git config --global user.name "aivictorov"
+
 Глобальная установка Gulp-cli:
 npm install --global gulp-cli
 
