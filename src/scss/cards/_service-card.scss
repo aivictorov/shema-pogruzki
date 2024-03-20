@@ -60,7 +60,7 @@
 
 .service-card__img {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: flex-end;
 	align-items: flex-end;
 	width: 40%;
 	min-width: 40%;
@@ -71,8 +71,10 @@
 	}
 
 	img {
-		max-width: unset;
-		max-height: 87px;
+		padding-bottom: 1px;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
 		opacity: 0.9;
 	}
 }
