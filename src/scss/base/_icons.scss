@@ -10,6 +10,11 @@
     &--arrow-up {
         width: 24px;
         height: 12px;
+
+        @include bp(768px) {
+            width: 12px;
+            height: 6px;
+        }
     }
 
     &--close {
