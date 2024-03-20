@@ -15,8 +15,6 @@ function mobileNav() {
 	const navIcon = document.querySelector('.nav-icon');
 	const navLinks = document.querySelectorAll('.menu .menu__item a');
 	
-	console.log(navLinks)
-
 	navIcon.addEventListener('click', function () {
 		navIcon.classList.toggle('nav-icon--active');
 		nav.classList.toggle('menu--active');

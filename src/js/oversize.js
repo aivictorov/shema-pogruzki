@@ -30,55 +30,35 @@ export function oversizeForm() {
             document.querySelector('#coord-X').value = "";
 
             points.forEach((point) => {
-                let sizeX
+                let data = [loadingSize, oversize1, oversize2, oversize3, oversize4, oversize5, oversize6, constructionSize];
+                let prevX, sizeX;
 
-                sizeX = check(point["Y"], loadingSize)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 0
-                    return
-                }
+                for (let index = 0; index < data.length; index++) {
+                    sizeX = check(point["Y"], data[index])
 
-                sizeX = check(point["Y"], oversize1)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 1
-                    return
-                }
+                    if (index !== 0) {
+                        point['minus'] = point["X"] - check(point["Y"], data[index - 1]);
+                    };
 
-                sizeX = check(point["Y"], oversize2)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 2
-                    return
-                }
+                    if (point["X"] <= sizeX) {
+                        if (index <= 6) {
+                            point['index'] = index;
+                        } else {
+                            point['index'] = 8;
+                        };
 
-                sizeX = check(point["Y"], oversize3)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 3
-                    return
-                }
+                        point['plus'] = sizeX - point["X"];
 
-                sizeX = check(point["Y"], oversize4)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 4
-                    return
-                }
+                        if (index !== 0) {
+                            point['minus'] = point["X"] - prevX;
+                        };
 
-                sizeX = check(point["Y"], oversize5)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 5
-                    return
-                }
+                        return;
+                    };
 
-                sizeX = check(point["Y"], oversize6)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 6
-                    return
-                }
-
-                sizeX = check(point["Y"], constructionSize)
-                if (point["X"] <= sizeX) {
-                    point['index'] = 8
-                    return
-                }
+                    point['minus'] = point["X"] - sizeX;
+                    prevX = sizeX > 0 ? sizeX : prevX;
+                };
 
                 point['index'] = "–";
             });
@@ -116,7 +96,7 @@ export function oversizeForm() {
 
     resetBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        
+
         document.querySelector('#coord-Y').value = "";
         document.querySelector('#coord-X').value = "";
 
@@ -166,7 +146,18 @@ function render(pointsObj, field) {
         field.insertAdjacentHTML("beforeend", `
             <div class="oversize-points__row">
                 <div class="oversize-points__item">${point['Y']}</div>
-                <div class="oversize-points__item">${point['X']}</div>
+                <div class="oversize-points__item">
+                    ${point['X']}
+                    <div class="oversize-points__notice oversize-points__notice--left">
+                        ${point['minus'] ? '-' + point['minus'] : ""}
+                        ${point['minus'] === 0 ? '-0' : ""}
+                    </div>
+                    <div class="oversize-points__notice oversize-points__notice--right">
+                        ${point['plus'] ? '+' + point['plus'] : ""}
+                        ${point['plus'] === 0 ? '+0' : ""}
+
+                    </div>
+                </div>
                 <div class="oversize-points__item">${point['zone']}</div>
                 <div class="oversize-points__item">${point['index']}</div>
             </div>
