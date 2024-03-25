@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 {% set title = "Схема погрузки .РФ | Разработка схем размещения и крепления грузов" %}
-{% set url = "http://shema-pogruzki.ru/" %}
-{% set description = "Разработка схем размещения и крепления грузов на платформах, в полувагонах, в крытых вагонах, в
- крупнотоннажных контейнерах, а также на платформенных, площадочных, колодцевых и сцепных транспортерах." %}
-{% set keywords = "схема погрузки, эскиз погрузки, чертеж погрузки, НТУ, МТУ, железная дорога, жд, груз, перевозка,
- негабарит, платформа, полувагон, крытый вагон, транспортер " %}
+{% set url = "https://shema-pogruzki.ru/" %}
+{% set description = "Разработка схем размещения и крепления грузов на платформах, в полувагонах, в крытых вагонах, в крупнотоннажных контейнерах, а также на платформенных, площадочных, колодцевых и сцепных транспортерах." %}
+{% set keywords = "схема погрузки, эскиз погрузки, чертеж погрузки, НТУ, МТУ, железная дорога, жд, груз, перевозка, негабарит, платформа, полувагон, крытый вагон, транспортер " %}
 
 <html lang="ru-RU">
-
     <head>
         <!-- Encoding -->
         <meta charset="UTF-8">
@@ -19,9 +16,28 @@
         <title>{{ title }}</title>
         <meta name="description" content="{{ description }}"/>
         <meta name="keywords" content="{{ keywords }}"/>
+        <link rel="canonical" href="{{ url }}"/>
 
         <!-- Styles -->
         <link rel="stylesheet" href="./css/main.css"/>
+
+        <!-- OpenGraph -->
+        <meta property="og:url" content="{{ url }}"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="{{ title }}"/>
+        <meta property="og:description" content="{{ description }}"/>
+        <meta property="og:image" content="./img/opengraph.jpg"/>
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="./img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="./img/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
 
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
@@ -55,24 +71,6 @@
             <div><img src="https://mc.yandex.ru/watch/96778311" style="position:absolute; left:-9999px;" alt=""/></div>
         </noscript>
         <!-- /Yandex.Metrika counter -->
-
-        <!-- OpenGraph -->
-        <meta property="og:url" content="{{ url }}"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="{{ title }}"/>
-        <meta property="og:description" content="{{ description }}"/>
-        <meta property="og:image" content="./img/opengraph.jpg"/>
-
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="./img/favicon/site.webmanifest">
-        <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="./img/favicon/favicon.ico">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="./img/favicon/browserconfig.xml">
-        <meta name="theme-color" content="#ffffff">
     </head>
 
     <body>

@@ -24,8 +24,6 @@
 .oversize-points__notice {
     position: absolute;
     top: 0;
-
-    padding-right: 2px;
     font-size: 12px;
 
     @include bp(768px) {
@@ -34,9 +32,11 @@
 
     &--left {
         left: 0;
+        padding-left: 2px;
     }
 
     &--right {
         right: 0;
+        padding-right: 2px;
     }
 }
