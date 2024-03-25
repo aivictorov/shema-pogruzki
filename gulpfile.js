@@ -108,11 +108,6 @@ gulp.task('php', function () {
         .pipe(gulp.dest('./dist/php/'));
 });
 
-gulp.task('htaccess', function () {
-    return gulp.src('./src/.htaccess')
-        .pipe(gulp.dest('./dist/'));
-});
-
 gulp.task('server', function () {
     return gulp.src('./dist/')
         .pipe(server(serverSettings));
@@ -133,6 +128,6 @@ gulp.task('watch', function () {
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'php', 'libs', 'files', 'htaccess'),
+    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'php', 'libs', 'files'),
     gulp.parallel('server', 'watch')
 ));
