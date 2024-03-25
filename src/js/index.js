@@ -4,11 +4,15 @@ import { validate, validateEmail, validateCaptcha } from './validation.js';
 window.addEventListener('DOMContentLoaded', () => {
 	modalWindows();
 	scrollup();
-	oversizeForm();
-	callbackForm();
-	inputFile();
 	mobileNav();
 });
+
+document.addEventListener('click', function () {
+	console.log('hi')
+	callbackForm();
+	inputFile();
+	oversizeForm();
+}, { once: true });
 
 function mobileNav() {
 	const nav = document.querySelector('.menu');
