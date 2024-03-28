@@ -27,7 +27,7 @@ function isEmpty(value) {
 export function validateCaptcha(form) {
     let result = true;
 
-    const captcha = form.querySelector('.g-recaptcha');
+    const captcha = form.querySelector('#captcha_id');
     let notify = captcha.closest('.captcha').querySelector('.input__notify');
 
     if (!grecaptcha.getResponse()) {
@@ -36,10 +36,6 @@ export function validateCaptcha(form) {
     } else {
         notify.innerText = "";
     }
-
-    captcha.closest('.captcha').addEventListener('click', () => {
-        alert('hi')
-    })
 
     return result;
 };
