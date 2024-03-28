@@ -28,7 +28,7 @@ export function validateCaptcha(form) {
     let result = true;
 
     const captcha = form.querySelector('#captcha_id');
-    let notify = captcha.closest('.captcha').querySelector('.input__notify');
+    const notify = captcha.closest('.captcha').querySelector('.input__notify');
 
     if (!grecaptcha.getResponse()) {
         result = false;

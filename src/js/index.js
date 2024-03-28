@@ -27,11 +27,18 @@ function captcha() {
 	script.async = true;
 	script.onload = function () {
 		grecaptcha.ready(function () {
-			grecaptcha.render('captcha_id', { 'sitekey': key });
+			grecaptcha.render('captcha_id', { 'sitekey': key, 'callback': verifyCallback, });
 		})
 	}
 
 	document.body.appendChild(script);
+
+	function verifyCallback() {
+		const captcha = form.querySelector('#captcha_id');
+		const notify = captcha.closest('.captcha').querySelector('.input__notify');
+		notify.innerText = "";
+	}
+
 }
 
 function metrika() {
