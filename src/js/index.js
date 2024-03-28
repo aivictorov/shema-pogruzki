@@ -8,11 +8,60 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', function () {
-	console.log('hi')
 	callbackForm();
 	inputFile();
 	oversizeForm();
+	captcha();
 }, { once: true });
+
+
+document.addEventListener('scroll', function () {
+	metrika();
+}, { once: true });
+
+function captcha() {
+	var key = '6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs';
+
+	var script = document.createElement('script');
+	script.src = 'https://www.google.com/recaptcha/api.js';
+	script.async = true;
+	script.onload = function () {
+		grecaptcha.ready(function () {
+			grecaptcha.render('captcha_id', { 'sitekey': key });
+		})
+	}
+
+	document.body.appendChild(script);
+}
+
+function metrika() {
+	(function (m, e, t, r, i, k, a) {
+		m[i] = m[i] || function () {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t),
+			a = e.getElementsByTagName(t)[0],
+			k.async = 1,
+			k.src = r,
+			a
+				.parentNode
+				.insertBefore(k, a)
+	})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(96778311, "init", {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: false
+	});
+}
+
 
 function mobileNav() {
 	const nav = document.querySelector('.menu');
@@ -34,9 +83,9 @@ function mobileNav() {
 
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');
-	scrollup.style.opacity = 0;
+	scrollup.style.display = 'none';
 	document.addEventListener('scroll', () => {
-		scrollup.style.opacity = window.scrollY > 300 ? 1 : 0;
+		scrollup.style.display = window.scrollY > 300 ? 'flex' : 'none';
 	});
 	scrollup.addEventListener('click', () => {
 		window.scrollTo(0, 0);

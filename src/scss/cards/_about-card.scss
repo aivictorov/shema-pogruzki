@@ -48,6 +48,20 @@
 	}
 }
 
+.about-card__text {
+	padding-bottom: 3px;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 21px;
+
+	@include bp(768px) {
+		line-height: 1;
+		font-size: 12px;
+		font-weight: 600;
+		padding-bottom: 4px;
+	}
+}
+
 .about-card__data {
 	color: $red;
 	padding-right: 54px;

@@ -4,6 +4,7 @@ a.logo {
     height: 50px;
     position: relative;
     z-index: 2;
+    font-size: 0;
 
     @include bp(768px) {
         height: 30px;
