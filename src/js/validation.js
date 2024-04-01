@@ -18,7 +18,6 @@ export function validate(form, name) {
     return result;
 };
 
-
 function isEmpty(value) {
     return value.trim() == "";
 };

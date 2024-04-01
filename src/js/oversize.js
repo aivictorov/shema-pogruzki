@@ -2,7 +2,7 @@ import { loadingSize, oversize1, oversize2, oversize3, oversize4, oversize5, ove
 
 export function oversizeForm() {
     const addBtn = document.querySelector('#addBtn');
-    const countBtn = document.querySelector('#count');
+    // const countBtn = document.querySelector('#count');
     const resetBtn = document.querySelector('#reset');
     const pointsField = document.querySelector('#points');
     const resultField = document.querySelector('#result');
