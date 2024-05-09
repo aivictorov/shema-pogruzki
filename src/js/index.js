@@ -1,6 +1,14 @@
 import { oversizeForm } from './oversize.js';
 import { validate, validateEmail, validateCaptcha } from './validation.js';
 
+window.addEventListener('load', () => {
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+	}, 500);
+});
+
 window.addEventListener('DOMContentLoaded', () => {
 	modalWindows();
 	scrollup();
