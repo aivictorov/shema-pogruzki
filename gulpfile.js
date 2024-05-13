@@ -108,6 +108,11 @@ gulp.task('php', function () {
         .pipe(gulp.dest('./dist/php/'));
 });
 
+gulp.task('root', function () {
+    return gulp.src(['./src/root/.*', './src/root/*'])
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('server', function () {
     return gulp.src('./dist/')
         .pipe(server(serverSettings));
@@ -122,12 +127,13 @@ gulp.task('watch', function () {
     gulp.watch('./src/php/**/*', gulp.parallel('php'));
     gulp.watch('./src/libs/**/*', gulp.parallel('libs'));
     gulp.watch('./src/files/**/*', gulp.parallel('files'));
+    gulp.watch(['./src/root/.*', './src/root/*'], gulp.parallel('root'));
 });
 
 // Default task
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'php', 'libs', 'files'),
+    gulp.parallel('html', 'sass', 'images', 'fonts', 'js', 'php', 'libs', 'files', 'root'),
     gulp.parallel('server', 'watch')
 ));

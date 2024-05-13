@@ -1,0 +1,3 @@
+User-Agent: *
+Sitemap: https://shema-pogruzki.ru/sitemap.xml
+Host: shema-pogruzki.ru
