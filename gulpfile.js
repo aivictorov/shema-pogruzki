@@ -7,19 +7,26 @@ const gulp = require('gulp');
 const fs = require('fs');
 const clean = require('gulp-clean');
 const nunjucks = require('gulp-nunjucks');
+const htmlmin = require('gulp-htmlmin');
 const sass = require('gulp-sass')(require('sass'));
-const server = require('gulp-server-livereload');
+const cleancss = require('gulp-clean-css');
 const sourceMaps = require('gulp-sourcemaps');
 // const groupMedia = require('gulp-group-css-media-queries');
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const server = require('gulp-server-livereload');
 
 // Settings
 
 const cleanSettings = {
     force: true
+}
+
+const htmlminSettings = {
+    collapseWhitespace: true,
+    removeComments: true
 }
 
 const sassSettings = {
@@ -57,6 +64,7 @@ gulp.task('html', function () {
     return gulp.src('./src/html/*.html')
         .pipe(plumber(plumberSettings('HTML')))
         .pipe(nunjucks.compile())
+        .pipe(htmlmin(htmlminSettings))
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -67,6 +75,7 @@ gulp.task('sass', function () {
         .pipe(sass(sassSettings))
         // .pipe(groupMedia())
         .pipe(sourceMaps.write())
+        .pipe(cleancss({ level: { 1: { specialComments: 0 } } /* , format: 'beautify' */ }))
         .pipe(gulp.dest('./dist/css/'));
 });
 
