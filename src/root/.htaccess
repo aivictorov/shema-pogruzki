@@ -10,6 +10,6 @@ RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 RewriteCond %{HTTP:HTTPS} !=on [NC]
 RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 
-<filesMatch ".(css|js|jpg|jpeg|png|gif|ico|woff|woff2)$">
+<filesMatch ".(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$">
     Header set Cache-Control "max-age=604800, public"
 </filesMatch>
