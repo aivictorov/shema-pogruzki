@@ -179,4 +179,4 @@ gulp.task('prod', gulp.series(
     'clean',
     gulp.parallel('html-prod', 'sass-prod', 'images', 'fonts', 'js-prod', 'php', 'libs', 'files', 'root'),
     gulp.parallel('server', 'watch-prod')
-));
+)); 
