@@ -135,8 +135,9 @@ function modalWindows() {
 };
 
 function callbackForm() {
-	const form = document.querySelector('#form')
-	const answer = document.querySelector('#answer')
+	const form = document.querySelector('#form');
+	const answer = document.querySelector('#answer');
+	const content = form.closest('.modal__content');
 
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
@@ -159,6 +160,7 @@ function callbackForm() {
 				body: formData
 			}).then(response => {
 				response.text().then(responseText => {
+					content.classList.add('modal__content--center');
 					form.classList.add('none')
 					answer.innerText = responseText;
 					const closeBtn = event.target.closest('[modal-window]').querySelector('[close-modal-button]');
@@ -167,6 +169,7 @@ function callbackForm() {
 						closeBtn.classList.remove('none');
 
 						closeBtn.addEventListener('click', function (event) {
+							content.classList.remove('modal__content--center');
 							form.classList.remove('none');
 							answer.innerText = "";
 							grecaptcha.reset();
