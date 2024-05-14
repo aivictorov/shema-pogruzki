@@ -2,14 +2,7 @@ import { oversizeForm } from './oversize.js';
 import { validate, validateEmail, validateCaptcha } from './validation.js';
 
 window.addEventListener('load', () => {
-	document.body.classList.add('loaded_hiding');
-	window.setTimeout(function () {
-		document.body.classList.add('loaded');
-		document.body.classList.remove('loaded_hiding');
-	}, 500);
-});
-
-window.addEventListener('DOMContentLoaded', () => {
+	loader();
 	modalWindows();
 	scrollup();
 	mobileNav();
@@ -21,6 +14,14 @@ document.addEventListener('click', function () {
 	oversizeForm();
 	captcha();
 }, { once: true });
+
+function loader() {
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+	}, 500);
+}
 
 function captcha() {
 	var key = '6LcXOZkpAAAAAKMYw8hzWcIoRbcvHp4BBlgZCUVs';
