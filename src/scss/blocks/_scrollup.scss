@@ -1,21 +1,31 @@
 .scrollup {
-    width: 70px;
-    height: 70px;
-    background: #FFD88B;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
-    z-index: 5;
     right: 35px;
-    bottom: 110px;
+    bottom: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFD88B;
+    opacity: 0.5;
     transition: 0.5s;
-    // opacity: 0;
+    z-index: 5;
+    cursor: pointer;
+
+    & svg {
+        transform: translateY(-1px);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
 
     @include bp(768px) {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         right: 15px;
+        bottom: 200px;
     }
 }
