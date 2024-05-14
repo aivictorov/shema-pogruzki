@@ -3,11 +3,11 @@
     <div class="modal" modal-window="callback">
         <div class="modal__content modal__content--center">
             {% include './../forms/callback-form.html' %}
-        </div>
-        <div class="modal__close-button">
-            <svg class="icon icon--close-light">
-                <use xlink:href="./img/icons/sprite.svg#close"></use>
-            </svg>
+            <div class="modal__close-button" close-modal-button="callback">
+                <svg class="icon icon--close-light">
+                    <use xlink:href="./img/icons/sprite.svg#close"></use>
+                </svg>
+            </div>
         </div>
     </div>
     <!-- //callback -->
@@ -16,11 +16,11 @@
     <div class="modal" modal-window="oversize">
         <div class="modal__content modal__content--right">
             {% include './../forms/oversize-form.html' %}
-        </div>
-        <div class="modal__close-button">
-            <svg class="icon icon--close">
-                <use xlink:href="./img/icons/sprite.svg#close"></use>
-            </svg>
+            <div class="modal__close-button" close-modal-button="oversize">
+                <svg class="icon icon--close">
+                    <use xlink:href="./img/icons/sprite.svg#close"></use>
+                </svg>
+            </div>
         </div>
     </div>
     <!-- //oversize -->
@@ -38,11 +38,11 @@
                 <div class="modal-content__btn">
                     <button class="btn btn--red" modal-button="callback">Заказать</button>
                 </div>
-            </div>
-            <div class="modal__close-button">
-                <svg class="icon icon--close-light">
-                    <use xlink:href="./img/icons/sprite.svg#close"></use>
-                </svg>
+                <div class="modal__close-button" close-modal-button="{{ name }}">
+                    <svg class="icon icon--close-light">
+                        <use xlink:href="./img/icons/sprite.svg#close"></use>
+                    </svg>
+                </div>
             </div>
         </div>
     {% endmacro %}

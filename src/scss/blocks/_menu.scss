@@ -16,14 +16,14 @@
         border-top: 1px solid #E2E8EB;
         height: 100%;
         overflow-y: auto;
+
+        &--active {
+            display: block;
+        }
     }
 
     @include bp(768px) {
         margin-top: 92px;
-    }
-
-    &--active {
-        display: block;
     }
 }
 

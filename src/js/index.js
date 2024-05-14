@@ -78,7 +78,7 @@ function modalWindows() {
 
 		if (modal) {
 			const content = modal.querySelector('.modal__content');
-			const closeBtn = modal.querySelector(`[close-modal-button="${button.getAttribute('modal-button')}"]`);
+			const closeBtns = modal.querySelectorAll(`[close-modal-button="${button.getAttribute('modal-button')}"]`);
 			const nav = document.querySelector('.menu');
 			const navIcon = document.querySelector('.nav-icon');
 			const header = document.querySelector('.header');
@@ -106,12 +106,14 @@ function modalWindows() {
 				header.classList.remove('noscroll');
 			});
 
-			if (closeBtn) {
-				closeBtn.addEventListener('click', () => {
-					modal.classList.remove('active');
-					document.body.classList.remove('noscroll');
-					header.classList.remove('noscroll');
-				});
+			if (closeBtns) {
+				closeBtns.forEach((closeBtn => {
+					closeBtn.addEventListener('click', () => {
+						modal.classList.remove('active');
+						document.body.classList.remove('noscroll');
+						header.classList.remove('noscroll');
+					});
+				}));
 			};
 		};
 	});

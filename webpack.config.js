@@ -2,10 +2,9 @@ const config = {
 	mode: 'production',
 	entry: {
 		index: './src/js/index.js'
-		// article: './src/js/article.js',
 	},
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].js',
 	},
 	module: {
 		rules: [
