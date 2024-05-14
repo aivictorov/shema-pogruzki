@@ -4,8 +4,8 @@ import { validate, validateEmail, validateCaptcha } from './validation.js';
 window.addEventListener('load', () => {
 	loader();
 	modalWindows();
-	scrollup();
 	mobileNav();
+	metrika();
 });
 
 document.addEventListener('click', function () {
@@ -13,6 +13,10 @@ document.addEventListener('click', function () {
 	inputFile();
 	oversizeForm();
 	captcha();
+}, { once: true });
+
+document.addEventListener('scroll', function () {
+	scrollup();
 }, { once: true });
 
 function loader() {
@@ -64,9 +68,8 @@ function mobileNav() {
 
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');
-	scrollup.style.display = 'none';
 	document.addEventListener('scroll', () => {
-		scrollup.style.display = window.scrollY > 300 ? 'flex' : 'none';
+		scrollup.style.display = window.scrollY > 300 ? scrollup.classList.add('scrollup--active') : scrollup.classList.remove('scrollup--active');;
 	});
 	scrollup.addEventListener('click', () => {
 		window.scrollTo(0, 0);
@@ -205,3 +208,36 @@ function inputFile() {
 		});
 	});
 };
+
+function metrika() {
+	(function (d, w, c) {
+		(w[c] = w[c] || []).push(function () {
+			try {
+				w.yaCounter96778311 = new Ya.Metrika({ id: 96778311, clickmap: false, trackLinks: false, accurateTrackBounce: true });
+			} catch (e) { }
+		});
+
+		var n = d.getElementsByTagName("script")[0],
+			x = "https://mc.yandex.ru/metrika/watch.js",
+			s = d.createElement("script"),
+			f = function () {
+				n
+					.parentNode
+					.insertBefore(s, n);
+			};
+		for (var i = 0; i < document.scripts.length; i++) {
+			if (document.scripts[i].src === x) {
+				return;
+			}
+		}
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = x;
+
+		if (w.opera == "[object Opera]") {
+			d.addEventListener("DOMContentLoaded", f, false);
+		} else {
+			f();
+		}
+	})(document, window, "yandex_metrika_callbacks");
+}
