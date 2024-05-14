@@ -1,0 +1,117 @@
+.instruction {
+    background-color: $white;
+    width: 100%;
+    border-top: 1px solid #DDE4E7;
+
+    &:last-child {
+        border-bottom: 1px solid #DDE4E7;
+    }
+
+    &__head {
+        cursor: pointer;
+        padding: 25px 24px 26px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        transition: .3s ease-in-out;
+
+        h4 {
+            padding-bottom: 0;
+            padding-right: 30px;
+        }
+
+        // @include bp($point-3) {
+        //     padding: 20px 20px 20px 0;
+        // }
+
+        &.js-faq-active {
+            svg {
+                transform: rotate(180deg);
+                stroke: $baseTxt;
+            }
+        }
+    }
+
+    &__title {
+        color: $baseTxt;
+        margin: 0;
+        flex: 1;
+        font-size: 21px;
+        transition: .3s ease-in-out;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+
+        // @include bp($point-3) {
+        //     font-size: 16px;
+        // }
+    }
+
+    svg {
+        fill: transparent;
+        stroke: #C20D19;
+        stroke-width: 3px;
+        flex: 0 0 20px;
+        width: 17px;
+        height: 17px;
+        transition: all .3s ease-in-out;
+    }
+
+    &__body {
+        padding: 5px 60px 30px 0px;
+        display: none;
+    }
+
+
+
+    &__text {
+        color: $black;
+        margin: 0 0 20px;
+        font-size: 15px;
+        line-height: 21px;
+
+        // @include bp($point-2) {
+        //     font-size: 13px;
+        //     line-height: 23px;
+        // }
+    }
+
+    &__close {
+        text-align: center;
+
+        button {
+            color: $red;
+            font-weight: 500;
+            transition: opacity $med;
+            display: inline-flex;
+            align-items: center;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            svg {
+                margin-left: 5px;
+                height: 9px;
+                transform: rotate(180deg);
+                margin-top: 1px;
+            }
+        }
+    }
+
+
+
+    // @include bp($point-2) {
+    //     &__body {
+    //         padding-right: 30px;
+    //     }
+
+    //     &__head {
+    //         padding-right: 0;
+
+    //         h4 {
+    //             padding-right: 20px;
+    //         }
+    //     }
+    // }
+}
