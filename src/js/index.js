@@ -6,6 +6,8 @@ window.addEventListener('load', () => {
 	modalWindows();
 	mobileNav();
 	metrika();
+
+	faq()
 });
 
 document.addEventListener('click', function () {
@@ -18,6 +20,79 @@ document.addEventListener('click', function () {
 document.addEventListener('scroll', function () {
 	scrollup();
 }, { once: true });
+
+
+function faq() {
+	const instructions = document.querySelectorAll('.instruction');
+
+	instructions.forEach((instruction) => {
+		const head = instruction.querySelector('.instruction__head');
+		const body = instruction.querySelector('.instruction__body');
+
+		head.addEventListener('click', () => {
+			head.classList.toggle('js-faq-active');
+
+			if (body.style.display == "block") body.style.display = "none";
+			if (body.style.display == "none") body.style.display = "block";
+		});
+	});
+
+	const closeBtns = document.querySelectorAll('.js-dropdown-close');
+
+	closeBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			btn.closest('.instruction').querySelector('.instruction__head').classList.toggle('js-faq-active');
+			btn.closest('.instruction').querySelector('.instruction__body').style.display = "none";
+		});
+	});
+
+	// $('.instruction').each(function () {
+	// 	$('.instruction__head').on('click', function () {
+	// 		$(this).next('.instruction__body').slideToggle(500);
+	// 		$(this).toggleClass('js-faq-active');
+	// 	});
+	// 	$('.js-dropdown-close').on('click', function () {
+	// 		$(this).closest('.instruction__body').slideToggle(500);
+	// 		$(this).closest('.instruction').find('.instruction__head').toggleClass('js-faq-active');
+	// 	});
+	// });
+
+	// var clickOpen = function clickOpen(event) {
+	// 	if (!isMobile) return;
+	// 	var $dropdownButton = $(this);
+	// 	var $dropdown = $dropdownButton.closest('.js-dropdown');
+
+	// 	$dropdown.addClass('is-open');
+	// };
+
+	// var clickClose = function clickClose(event) {
+	// 	if (!isMobile) return;
+	// 	var $dropdownButton = $(this);
+	// 	var $dropdown = $dropdownButton.closest('.js-dropdown');
+
+	// 	$dropdown.removeClass('is-open');
+	// };
+
+	// var $dropdown = $('.js-dropdown');
+	// var $dropdownOpen = $dropdown.find('.js-dropdown-open');
+	// var $dropdownClose = $dropdown.find('.js-dropdown-close');
+	// $dropdown.on('mouseenter', enterHandler);
+	// $dropdown.on('mouseleave', leaveHandler);
+	// $dropdownOpen.on('click', clickOpen);
+	// $dropdownClose.on('click', clickClose);
+	// checkFlags();
+	// $(window).on('resize', function () {
+	// 	checkFlags();
+	// });
+
+	// $dropdownOpen.on('click', function (event) {
+	// 	if ($(window).width() <= 1366) {
+	// 		event.preventDefault();
+	// 	}
+	// });
+
+}
+
 
 function loader() {
 	document.body.classList.add('loaded_hiding');
