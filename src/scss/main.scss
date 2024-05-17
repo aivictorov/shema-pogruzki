@@ -24,11 +24,12 @@
 @import "./blocks/scrollup";
 
 // Cards
-@import "./cards/service-card";
-@import "./cards/article-card";
-@import "./cards/portfolio-card";
 @import "./cards/about-card";
+@import "./cards/article-card";
 @import "./cards/doc-card";
+@import "./cards/portfolio-card";
+@import "./cards/question-card";
+@import "./cards/service-card";
 
 // Forms
 @import "./forms/form";

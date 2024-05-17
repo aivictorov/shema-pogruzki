@@ -23,17 +23,20 @@ document.addEventListener('scroll', function () {
 
 
 function faq() {
-	const instructions = document.querySelectorAll('.instruction');
+	const questions = document.querySelectorAll('.question-card');
 
-	instructions.forEach((instruction) => {
-		const head = instruction.querySelector('.instruction__head');
-		const body = instruction.querySelector('.instruction__body');
+	questions.forEach((question) => {
+		const head = question.querySelector('.question-card__head');
+		const body = question.querySelector('.question-card__body');
 
 		head.addEventListener('click', () => {
 			head.classList.toggle('js-faq-active');
 
-			if (body.style.display == "block") body.style.display = "none";
-			if (body.style.display == "none") body.style.display = "block";
+			if (!body.style.display || body.style.display == "none") {
+				body.style.display = "block";
+			} else {
+				body.style.display = "none";
+			}
 		});
 	});
 
@@ -41,8 +44,8 @@ function faq() {
 
 	closeBtns.forEach((btn) => {
 		btn.addEventListener('click', () => {
-			btn.closest('.instruction').querySelector('.instruction__head').classList.toggle('js-faq-active');
-			btn.closest('.instruction').querySelector('.instruction__body').style.display = "none";
+			btn.closest('.question-card').querySelector('.question-card__head').classList.toggle('js-faq-active');
+			btn.closest('.question-card').querySelector('.question-card__body').style.display = "none";
 		});
 	});
 

@@ -16,7 +16,7 @@
 			stroke-width="1.75" d="M1 1l3.41 3L8 1" />
 	</symbol>
 	<symbol id="arrow_down" viewBox="0 0 20 13">
-		<path d="M2 2l7.795 8L18 2" />
+		<path fill="transparent" d="M2 2l7.795 8L18 2" />
 	</symbol>
 	<symbol id="call" viewBox="0 0 21 21">
 		<path fill="currentColor"

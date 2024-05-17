@@ -1,0 +1,22 @@
+<div class="question-card">
+    <div class="question-card__head">
+        <h4 class="question-card__title">{{ question.title }}
+        </h4>
+        <svg class="icon icon--arrow_down">
+            <use xlink:href="./img/icons/sprite.svg#arrow_down"></use>
+        </svg>
+    </div>
+    <div class="question-card__body">
+        {% for paragraph in question.answer %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+        <div class="question-card__close">
+            <button class="js-dropdown-close">
+                <span>cкрыть</span>
+                <svg>
+                    <use xlink:href="./img/icons/sprite.svg#arrow_down"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
