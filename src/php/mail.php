@@ -1,6 +1,6 @@
 <?php
-$to = "aivictorov@yandex.ru";
-$from_name = "Схемы погрузки (ИП Викторов)";
+$to = "shema-pogruzki@yandex.ru";
+$from_name = "Схемы погрузки (ИП Викторов А.И.)";
 $from_email = "no-reply@shema-pogruzki.ru";
 $subject_text = "Заявка с сайта";
 $message_text = "";
@@ -20,7 +20,19 @@ foreach ($_POST as $key => $value) {
 		$key != "file" &&
 		$value != ""
 	) {
-		$message_text .= $key . " " . $value . "<br>";
+		if ($key == 'company') {
+			$message_text .= "Наименование организации: " . $value . "<br>";
+		} elseif ($key == 'name'){
+			$message_text .= "Контактное лицо: " . $value . "<br>";
+		} elseif ($key == 'phone'){
+			$message_text .= "Номер телефона: " . $value . "<br>";
+		} elseif ($key == 'email'){
+			$message_text .= "Адрес электронной почты: " . $value . "<br>";
+		} elseif ($key == 'message'){
+			$message_text .= "Текст сообщения: " . $value . "<br>";
+		} else {
+			$message_text .= $key . ": " . $value . "<br>";
+		}
 	};
 };
 

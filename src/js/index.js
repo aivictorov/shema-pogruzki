@@ -6,8 +6,6 @@ window.addEventListener('load', () => {
 	modalWindows();
 	mobileNav();
 	metrika();
-
-	faq()
 });
 
 document.addEventListener('click', function () {
@@ -18,6 +16,7 @@ document.addEventListener('click', function () {
 }, { once: true });
 
 document.addEventListener('scroll', function () {
+	faq();
 	scrollup();
 }, { once: true });
 
@@ -48,54 +47,7 @@ function faq() {
 			btn.closest('.question-card').querySelector('.question-card__body').style.display = "none";
 		});
 	});
-
-	// $('.instruction').each(function () {
-	// 	$('.instruction__head').on('click', function () {
-	// 		$(this).next('.instruction__body').slideToggle(500);
-	// 		$(this).toggleClass('js-faq-active');
-	// 	});
-	// 	$('.js-dropdown-close').on('click', function () {
-	// 		$(this).closest('.instruction__body').slideToggle(500);
-	// 		$(this).closest('.instruction').find('.instruction__head').toggleClass('js-faq-active');
-	// 	});
-	// });
-
-	// var clickOpen = function clickOpen(event) {
-	// 	if (!isMobile) return;
-	// 	var $dropdownButton = $(this);
-	// 	var $dropdown = $dropdownButton.closest('.js-dropdown');
-
-	// 	$dropdown.addClass('is-open');
-	// };
-
-	// var clickClose = function clickClose(event) {
-	// 	if (!isMobile) return;
-	// 	var $dropdownButton = $(this);
-	// 	var $dropdown = $dropdownButton.closest('.js-dropdown');
-
-	// 	$dropdown.removeClass('is-open');
-	// };
-
-	// var $dropdown = $('.js-dropdown');
-	// var $dropdownOpen = $dropdown.find('.js-dropdown-open');
-	// var $dropdownClose = $dropdown.find('.js-dropdown-close');
-	// $dropdown.on('mouseenter', enterHandler);
-	// $dropdown.on('mouseleave', leaveHandler);
-	// $dropdownOpen.on('click', clickOpen);
-	// $dropdownClose.on('click', clickClose);
-	// checkFlags();
-	// $(window).on('resize', function () {
-	// 	checkFlags();
-	// });
-
-	// $dropdownOpen.on('click', function (event) {
-	// 	if ($(window).width() <= 1366) {
-	// 		event.preventDefault();
-	// 	}
-	// });
-
 }
-
 
 function loader() {
 	document.body.classList.add('loaded_hiding');
@@ -223,16 +175,19 @@ function callbackForm() {
 
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
-
+		validate(form, 'company');
 		validate(form, 'name');
 		validate(form, 'phone');
 		validateEmail(form, 'email');
+		validate(form, 'message');
 		validateCaptcha(form);
 
 		if (
+			validate(form, 'company') &&
 			validate(form, 'name') &&
 			validate(form, 'phone') &&
 			validateEmail(form, 'email') &&
+			validate(form, 'message') &&
 			validateCaptcha(form)
 		) {
 			const formData = new FormData(form);
