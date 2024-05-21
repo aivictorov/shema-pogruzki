@@ -98,8 +98,16 @@ function mobileNav() {
 
 function scrollup() {
 	const scrollup = document.querySelector('.scrollup');
+	const services = document.querySelector('.services');
+	const footer = document.querySelector('.footer');
+
 	document.addEventListener('scroll', () => {
-		scrollup.style.display = window.scrollY > 300 ? scrollup.classList.add('scrollup--active') : scrollup.classList.remove('scrollup--active');;
+		if ((window.scrollY + window.innerHeight) > (services.offsetTop + services.offsetHeight) &&
+			(window.scrollY + window.innerHeight) < footer.offsetTop) {
+			scrollup.classList.add('scrollup--active');
+		} else {
+			scrollup.classList.remove('scrollup--active');
+		}
 	});
 	scrollup.addEventListener('click', () => {
 		window.scrollTo(0, 0);
