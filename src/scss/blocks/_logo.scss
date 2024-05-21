@@ -1,10 +1,11 @@
 a.logo {
     display: block;
-    overflow: hidden;
+    flex-shrink: 0;
     height: 50px;
     position: relative;
     z-index: 2;
     font-size: 0;
+    overflow: hidden;
 
     @include bp(768px) {
         height: 30px;

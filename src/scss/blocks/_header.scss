@@ -9,12 +9,14 @@
 	box-shadow: 0px 10px 64px rgba(0, 0, 0, 0.2);
 
 	&.noscroll {
+
 		.header-top,
 		.header-bottom {
 			padding-right: 17px;
 		}
 
 		@include bp(1210px) {
+
 			.header-top,
 			.header-bottom {
 				padding-right: 0;
@@ -45,6 +47,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	column-gap: 24px;
+
+	@include bp(1050px) {
+		column-gap: 20px;
+	}
 }
 
 .header__info {
@@ -99,6 +106,13 @@
 }
 
 .header__btn {
+	white-space: wrap;
+
+	@include bp(1000px) {
+		padding-left: 2.5px;
+		padding-right: 2.5px;
+	}
+
 	@include bp(960px) {
 		display: none;
 	}
