@@ -1,5 +1,5 @@
 <div class="doc-card-wrapper">
-    <a href={{ item.link }} class="doc-card" download>
+    <a href={{ item.link }} class="doc-card" download rel="nofollow">
         <span class="doc-card__icon">
             <svg class="icon icon--doc">
                 <use xlink:href="./img/icons/sprite.svg#doc"></use>
@@ -10,7 +10,8 @@
                 {{ item.title }}
             </span>
             <span class="doc-card__format">
-                {{ item.format }} {{ item.size }} мб.
+                {{ item.format }}
+                {{ item.size }} мб.
             </span>
         </span>
     </a>
