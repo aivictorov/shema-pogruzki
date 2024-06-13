@@ -1,12 +1,25 @@
 <div class="service-card-wrapper">
     <div class="service-card" modal-button="{{ service.modal }}">
         <span class="service-card__text">
-            <span class="service-card__name">
+            <h3 class="h6 service-card__title">
                 {{ service.title }}
+            </h3>
+            <span class="service-card__description">
+                {{ service.description }}
             </span>
-            <div class="service-card__details">
-                Подробнее
-            </div>
+            {# <div class="service-card__details">
+                Заказать
+            </div> #}
+            <span class="link link--icon link--arrow" modal-button="callback">
+                <span class="link__text">
+                        Заказать
+                    </span>
+                <span class="link__icon">
+                    <svg class="icon icon--arrow-next">
+                        <use xlink:href="./img/icons/sprite.svg#arrow-next"></use>
+                    </svg>
+                </span>
+            </span>
         </span>
         <span class="service-card__img">
             <img class="lazyload" src="./img/services/{{ service.img }}" alt="{{ service.title }}">

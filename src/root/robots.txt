@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /files
 Sitemap: https://shema-pogruzki.ru/sitemap.xml
-Host: shema-pogruzki.ru
+Host: https://shema-pogruzki.ru

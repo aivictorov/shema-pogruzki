@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{% set title = "Схема погрузки .РФ | Разработка схем размещения и крепления грузов" %}
-{% set description = "Разработка схем размещения и крепления грузов на платформах, в полувагонах, в крытых вагонах, в крупнотоннажных контейнерах, а также на платформенных, площадочных, колодцевых и сцепных транспортерах." %}
-{% set keywords = "схема погрузки, эскиз погрузки, чертеж погрузки, НТУ, МТУ, железная дорога, жд, груз, перевозка, негабарит, платформа, полувагон, крытый вагон, транспортер " %}
+{% set title = "Схемы погрузки и крепления грузов, эскизы, НТУ, МТУ, чертежи" %}
+{% set description = "Разработка и согласование схем погрузки, эскизов, НТУ, МТУ, чертежей для ж/д перевозки с любой станции и дороги РФ! Схемы крепления грузов на платформах, в полувагонах, крытых вагонах, контейнерах, на транспортерах." %}
+{% set keywords = "схема, эскиз, чертеж, погрузка, НТУ, МТУ, схема погрузки, эскиз погрузки, чертеж погрузки, схема НТУ, чертеж НТУ, схема МТУ, ж/д, груз, перевозка, платформа, полувагон, крытый вагон, транспортер, негабарит" %}
 {% set url = "https://shema-pogruzki.ru" %}
 
 <html lang="ru-RU">
@@ -37,20 +37,21 @@
 
     <body>
         {% include './blocks/loader.html' %}
-        {% include './modals/modals.html' %}
         {% include './blocks/header.html' %}
 
         <main class="main">
             {% include './sections/slider.html' %}
             {% include './sections/services.html' %}
             {% include './sections/about.html' %}
+            {% include './sections/types.html' %}
             {% include './sections/portfolio.html' %}
             {# {% include './sections/articles.html' %} #}
-            {% include './sections/info.html' %}
             {% include './sections/docs.html' %}
+            {% include './sections/info.html' %}
         </main>
 
         {% include './blocks/footer.html' %}
+        {% include './modals/modals.html' %}
         {% include './blocks/scrollup.html' %}
 
         <!-- Scripts -->

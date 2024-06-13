@@ -1,46 +1,86 @@
 <section id="docs" class="docs">
     <div class="container">
-        <div class="section-title ">
+        <div class="section-title">
             <h2 class="h2">Документы</h2>
+        </div>
+
+        <div class="section-subtitle">
+            <h3 class="h6">Технические условия ЦМ-943</h3>
         </div>
         <div class="docs__row">
             {% set docs = [
-                { 
+                {
                     "title": "Технические условия размещения и крепления грузов в вагонах и контейнерах (ЦМ-943) от 27.05.2003 г.",
                     "format": "PDF",
                     "size": "178,8",
                     "link": "./files/TU_CM-943_27.05.2003.pdf"
-                }, { 
+                }, {
                     "title": "Изменения в Технические условия размещения и крепления грузов в вагонах и контейнерах (ЦМ-943) от 12.07.2004 г.",
                     "format": "PDF",
                     "size": "0,4",
                     "link": "./files/TU_CM-943_izm_12.07.2004.pdf"
-                }, { 
+                }, {
                     "title": "Изменения в Технические условия размещения и крепления грузов в вагонах и контейнерах (ЦМ-943) от 12.08.2005 г.",
                     "format": "PDF",
                     "size": "1,4",
                     "link": "./files/TU_CM-943_izm_12.08.2005.pdf"
-                }, { 
-                    "title": "Памятка ОСЖД O+P 401 «Размещение и крепление грузов в крупнотоннажных контейнерах» (ред. от 01.07.2023). ",
-                    "format": "DJVU",
-                    "size": "2,0",
-                    "link": "./files/Pamjatka_O+P_401_01.07.2023.pdf"
-                }, { 
+                }
+            ] %}
+            {% for item in docs %}
+                {% include './../cards/doc-card.html' %}
+            {% endfor %}
+        </div>
+
+        <div class="section-subtitle">
+            <h3 class="h6">Соглашение СМГС</h3>
+        </div>
+        <div class="docs__row">
+            {% set docs = [
+                {
                     "title": "Приложение 3 к Соглашению о международном железнодорожном грузовом сообщении (СМГС) (ред. от 01.07.2023). Том 1",
                     "format": "PDF",
                     "size": "40,0",
                     "link": "./files/Pril_3_SMGS_Tom_I_2023.pdf"
-                }, { 
+                }, {
                     "title": "Приложение 3 к Соглашению о международном железнодорожном грузовом сообщении (СМГС) (ред. от 01.07.2023). Том 2",
                     "format": "PDF",
                     "size": "19,7",
                     "link": "./files/Pril_3_SMGS_Tom_II_2023.pdf"
-                }, { 
+                }, {
+                    "title": "Памятка ОСЖД O+P 401 «Размещение и крепление грузов в крупнотоннажных контейнерах» (ред. от 01.07.2023). ",
+                    "format": "DJVU",
+                    "size": "2,0",
+                    "link": "./files/Pamjatka_O+P_401_01.07.2023.pdf"
+                }
+            ] %}
+            {% for item in docs %}
+                {% include './../cards/doc-card.html' %}
+            {% endfor %}
+        </div>
+
+        <div class="section-subtitle">
+            <h3 class="h6">Инструкция ДЧ-1835</h3>
+        </div>
+        <div class="docs__row">
+            {% set docs = [
+                { 
                     "title": "Инструкция по перевозке негабаритных и тяжеловесных грузов на железных дорогах стран-участников СНГ (ДЧ-1835)",
                     "format": "PDF",
                     "size": "5,7",
                     "link": "./files/Instrukciya_DCh-1835.pdf"
-                }, { 
+                }
+            ] %}
+            {% for item in docs %}
+                {% include './../cards/doc-card.html' %}
+            {% endfor %}
+        </div>
+
+        <div class="section-subtitle">
+            <h3 class="h6">Подвижной состав</h3>
+        </div>
+        <div class="docs__row">
+            {% set docs = [
+                { 
                     "title": "Грузовые вагоны колеи 1520 мм железных дорог СССР. Альбом-справочник",
                     "format": "DJVU",
                     "size": "6,8",

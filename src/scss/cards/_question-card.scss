@@ -32,18 +32,19 @@
     }
 
     .question-card__title {
-        color: $baseTxt;
-        margin: 0;
         flex: 1;
-        transition: .3s ease-in-out;
-        font-weight: 500;
-        letter-spacing: -0.01em;
-    }
-
-    h4.question-card__title {
+        margin: 0;
         padding-bottom: 0;
         padding-right: 30px;
+        font-weight: 500;
         font-size: 20px;
+        letter-spacing: -0.01em;
+        color: $baseTxt;
+        transition: .3s ease-in-out;
+
+        strong {
+            font-weight: inherit;
+        }
 
         @include bp(768px) {
             padding-right: 20px;
