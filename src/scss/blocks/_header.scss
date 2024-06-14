@@ -73,11 +73,20 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	column-gap: 15px;
 	flex: 2;
 	height: 100%;
 
 	@include bp(960px) {
 		justify-content: flex-start;
+	}
+
+	@include bp(768px) {
+
+		&>*:nth-child(2),
+		&>*:nth-child(3) {
+			display: none;
+		}
 	}
 
 	@include bp(450px) {
@@ -115,6 +124,22 @@
 
 	@include bp(960px) {
 		display: none;
+	}
+}
+
+.header__mobile-nav-icons {
+	display: none;
+
+	@include bp(960px) {
+		display: flex;
+	}
+
+	&>*::not(:last-child) {
+		display: none;
+
+		@include bp(768px) {
+			display: flex;
+		}
 	}
 }
 

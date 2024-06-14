@@ -183,7 +183,7 @@ function callbackForm() {
 
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
-		validate(form, 'company');
+		// validate(form, 'company');
 		validate(form, 'name');
 		validate(form, 'phone');
 		validateEmail(form, 'email');
@@ -191,7 +191,7 @@ function callbackForm() {
 		validateCaptcha(form);
 
 		if (
-			validate(form, 'company') &&
+			// validate(form, 'company') &&
 			validate(form, 'name') &&
 			validate(form, 'phone') &&
 			validateEmail(form, 'email') &&

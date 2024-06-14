@@ -1,13 +1,10 @@
-// System
-@import "./system/reset";
-@import "./system/fonts";
-@import "./system/vars";
-@import "./system/utils";
-@import "./system/mixins";
-
-// Mixi
-
 // Base
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/mixins";
+@import "./base/utils";
+@import "./base/fonts";
+
 @import "./base/base";
 @import "./base/buttons";
 @import "./base/headers";
