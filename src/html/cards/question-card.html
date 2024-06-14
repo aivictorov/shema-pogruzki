@@ -1,13 +1,13 @@
-<div class="question-card">
+<div class="question-card" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
     <div class="question-card__head">
-        <div class="question-card__title">
+        <div class="question-card__title" itemprop="name">
             <strong>{{ question.title }}</strong>
         </div>
         <svg class="icon icon--arrow_down">
             <use xlink:href="./img/icons/sprite.svg#arrow_down"></use>
         </svg>
     </div>
-    <div class="question-card__body">
+    <div class="question-card__body" itemprop="acceptedAnswer">
         {% for paragraph in question.answer %}
             <p>{{ paragraph }}</p>
         {% endfor %}

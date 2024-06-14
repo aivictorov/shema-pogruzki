@@ -1,28 +1,32 @@
 <div class="service-card-wrapper">
-    <div class="service-card" modal-button="{{ service.modal }}">
+    <div class="service-card" modal-button="{{ service.modal }}" itemscope itemprop="itemListElement" itemtype="http://schema.org/Product">
         <span class="service-card__text">
-            <h3 class="h6 service-card__title">
+            <h3 class="h6 service-card__title" itemprop="name">
                 {{ service.title }}
             </h3>
-            <span class="service-card__description">
+            <div class="service-card__description" itemprop="description">
                 {{ service.description }}
-            </span>
-            {# <div class="service-card__details">
-                Заказать
-            </div> #}
-            <span class="link link--icon link--arrow" modal-button="callback">
-                <span class="link__text">
+            </div>
+
+            <div class="service-card__details" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                <meta itemprop="priceCurrency" content="RUB">
+                <link itemprop="availability" href="http://schema.org/InStock">
+                <div>Стоимость от <span itemprop="lowPrice">{{ service.lowPrice }}</span> руб.</div>
+                <span class="link link--icon link--arrow">
+                    <span class="link__text">
                         Заказать
                     </span>
-                <span class="link__icon">
-                    <svg class="icon icon--arrow-next">
-                        <use xlink:href="./img/icons/sprite.svg#arrow-next"></use>
-                    </svg>
+                    <span class="link__icon">
+                        <svg class="icon icon--arrow-next">
+                            <use xlink:href="./img/icons/sprite.svg#arrow-next"></use>
+                        </svg>
+                    </span>
                 </span>
-            </span>
+            </div>
+
         </span>
         <span class="service-card__img">
-            <img class="lazyload" src="./img/services/{{ service.img }}" alt="{{ service.title }}">
+            <img class="lazyload" src="./img/services/{{ service.img }}" alt="{{ service.title }}" itemprop="image">
         </span>
     </div>
 </div>

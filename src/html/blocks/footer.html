@@ -1,19 +1,22 @@
-<footer class="footer">
+<footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
     <div class="container">
-        <div class="footer__row">
+        <div class="footer__row" itemscope itemtype="http://schema.org/Organization">
             <div class="footer__item">
-                <div class="footer__name">© 2011-2024 Схема-Погрузки.РФ</div>
-                <div class="footer__adress">
-                    <p>ИП Викторов А.И., ОГРНИП 324784700053538</p>
-                    <p>г. Санкт-Петербург</p>
+                <div class="footer__name">
+                    <span>© 2011-2024</span>
+                    <span itemprop="name">ИП Викторов А.И.</span>
+                    <link itemprop="url" href="https://shema-pogruzki.ru">
+                </div>
+                <div class="footer__adress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <p>ИНН 781139624704, ОГРНИП 324784700053538</p>
+                    <p itemprop="addressLocality">г. Санкт-Петербург</p>
                 </div>
             </div>
             <div class="footer__item footer__item--right">
-                <div class="footer__phone">
+                <div class="footer__phone" itemprop="telephone">
                     <a class="link" href="tel:+79219512991">+7 (921) 951 29 91</a>
                 </div>
-
-                <div class="footer__email">
+                <div class="footer__email" itemprop="email">
                     <a class="link link--underline" href="mailto:shema-pogruzki@yandex.ru"
                        target="_blank">shema-pogruzki@yandex.ru
                     </a>

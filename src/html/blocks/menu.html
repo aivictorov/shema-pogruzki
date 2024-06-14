@@ -1,29 +1,31 @@
-<ul class="menu">
-    {% set menu = [
-        {
-            name: "О компании",
-            link: "/#about"
-        }, {
-            name: "Наши услуги",
-            link: "/#services"
-        }, {
-            name: "Виды схем",
-            link: "/#types"
-        }, {
-            name: "Портфолио",
-            link: "/#portfolio"
-        }, {
-            name: "Справочник",
-            link: "/#docs"
-        }
-    ] %}
+<nav itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <ul class="menu">
+        {% set menu = [
+            {
+                name: "О компании",
+                link: "/#about"
+            }, {
+                name: "Наши услуги",
+                link: "/#services"
+            }, {
+                name: "Виды схем",
+                link: "/#types"
+            }, {
+                name: "Портфолио",
+                link: "/#portfolio"
+            }, {
+                name: "Справочник",
+                link: "/#docs"
+            }
+        ] %}
 
-    {% for item in menu %}
-        <li class="menu__item">
-            <a href={{ item.link }} class="menu__link">{{ item.name }}</a>
+        {% for item in menu %}
+            <li class="menu__item" itemprop="name">
+                <a href={{ item.link }} class="menu__link" itemprop="url">{{ item.name }}</a>
+            </li>
+        {% endfor %}
+        <li class="menu__item menu__item--btn" itemprop="name">
+            <button class="btn btn--yellow" type="button" modal-button="oversize">Расчет негабаритности</button>
         </li>
-    {% endfor %}
-    <li class="menu__item menu__item--btn">
-        <button class="btn btn--yellow" type="button" modal-button="oversize">Расчет негабаритности</button>
-    </li>
-</ul>
+    </ul>
+</nav>

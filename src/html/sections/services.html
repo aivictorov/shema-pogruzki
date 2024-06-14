@@ -3,28 +3,32 @@
         <div class="section-title">
             <h2 class="h2">Наши услуги</h2>
         </div>
-        <div class="services__row">
+        <div class="services__row" itemscope itemtype="http://schema.org/ItemList">
             {% set services = [
                 {
                     "title": "Разработка эскизов погрузки",
                     "description": "Разработка эскизов размещения и крепления грузов на платформах, в полувагонах, крытых вагонах и контейнерах",
                     "img": "01.webp",
-                    "modal": "callback"
+                    "modal": "callback",
+                    "lowPrice": "5 000"
                 }, {
                     "title": "Разработка НТУ",
                     "description": "Разработка схем размещения и крепления грузов способами, не предусмотренными техническими условиями (НТУ)",
                     "img": "02.webp",
-                    "modal": "callback"
+                    "modal": "callback",
+                    "lowPrice": "20 000"
                 }, {
                     "title": "Разработка МТУ",
                     "description": "Разработка местных технических условий (МТУ) размещения и крепления грузов",
                     "img": "03.webp",
-                    "modal": "callback"
+                    "modal": "callback",
+                    "lowPrice": "30 000"
                 }, {
                     "title": "Разработка чертежей погрузки",
                     "description": "Разработка схем размещения и крепления негабаритных грузов и грузов, перевозимых на транспортерах",
                     "img": "04.webp",
-                    "modal": "callback"
+                    "modal": "callback",
+                    "lowPrice": "25 000"
                 }
             ] %}
 

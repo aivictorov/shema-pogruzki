@@ -49,13 +49,16 @@
 }
 
 .service-card__details {
-	display: inline-block;
+	display: inline-flex;
+	flex-direction: column;
+	row-gap: 5px;
+
 	font-size: 15px;
 	line-height: 1.2;
 	color: #BC0D18;
 	position: relative;
-	font-weight: 700;
-	width: auto;
+	font-weight: 500;
+	// width: auto;
 
 	@include bp(768px) {
 		font-size: 12px;
