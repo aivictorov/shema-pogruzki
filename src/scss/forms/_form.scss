@@ -55,6 +55,10 @@
     line-height: 1.25;
 }
 
+a.form__link {
+    color: $red;
+}
+
 .captcha {
     display: flex;
     flex-direction: column;
